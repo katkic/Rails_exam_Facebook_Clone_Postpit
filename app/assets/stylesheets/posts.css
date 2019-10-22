@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+body {
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  height: 45px;
+  padding-top: 8px;
+  background-color: #3B5998;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  width: 500px;
+  margin: 90px auto 0;
+}
+
+header nav {
+  width: 700px;
+  margin: 0 auto;
+}
+
+header nav ul li {
+  float: left;
+}
+
+header nav ul li input[type="text"] {
+  margin: 2px 5px 0 10px;
+  width: 400px;
+  height: 25px;
+}
+
+header nav ul li input[type="submit"] {
+  margin-right: 30px;
+  height: 30px;
+}
+
+header nav ul li img.user-icon {
+  /* width: 30px; */
+  border-radius: 50%;
+}
+
+header nav ul li.user-name {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.main-content {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.content-header {
+  padding: 15px
+}
+
+/* 画像の外接リサイズ ---------------*/
+.cover30 {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  /* background-color: #ccc;
+  border: 1px solid #ccc; */
+}
+
+.cover50 {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  /* background-color: #ccc;
+  border: 1px solid #ccc; */
+}
+/* ------------------------- */
+
+.content-header img.user-icon {
+  /* width: 50px; */
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  float: left;
+}
+
+.ct-l {
+  float: left;
+  margin-left: 10px;
+}
+
+.created_at {
+  font-size: 14px;
+}
+
+.ct-r {
+  float: right;
+}
+
+.content-sentence {
+  padding: 0 15px 15px;
+}
+
+.content-sentence p {
+  font-size: 16px;
+}
+
+.content-photo {
+  width: 100%;
+  height: auto;
+}
+
+.content-footer {
+  padding: 5px 15px;
+}
+
+.content-footer-top {
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content-footer-top li {
+  float: left;
+}
+
+.content-footer-top .li-right {
+  float: right;
+}
+
+.content-footer-bottom i {
+  margin-right: 5px;
+}
+
+.content-footer-bottom ul {
+  margin: 10px 0 5px 5px;
+}
+
+.content-footer-bottom ul li {
+  text-align: center;
+  display: inline-block;
+}
+
+.content-footer-bottom ul li a {
+  color: #333;
+  display: block;
+  width: 150px;
+  height: 40px;
+  padding-top: 8px;
+  font-size: 14px;
+}
+
+.content-footer-bottom ul li a:hover {
+  background-color: #f4f4f4;
+}
+
+img {
+  width: 500px;
+}

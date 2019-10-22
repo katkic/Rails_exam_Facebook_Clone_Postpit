@@ -1,0 +1,26 @@
+<% @page_title = '新規投稿' %>
+
+<h2><%= @page_title %></h2>
+
+<div class="post-container">
+  <h1>投稿を作成</h1>
+  <div class="post-content">
+    <div class="icon-area">
+      <p><img src="images/dive_into_code.png" alt="山田太郎" class="user-icon cover50"></p>
+    </div><!-- /.icon-area -->
+
+    <%= form_with model: @post, local: true do |f| %>
+      <%= f.text_area :content, placeholder: 'さん - 今何してる？', cols: 30, rows: 8, spellcheck: false %>
+
+      <div class="picture">
+        <i class="far fa-image fa-lg"></i>
+        <%= f.label :image, '写真' %>
+        <%= f.file_field :image %>
+      </div><!-- /.picture -->
+
+      <div class="submit clearfix">
+        <button type="submit">投稿</button>
+      </div><!-- /.submit -->
+    <% end %>
+  </div><!-- /.content -->
+  </div><!-- /.container -->
