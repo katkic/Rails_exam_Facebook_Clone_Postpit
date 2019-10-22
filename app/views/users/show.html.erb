@@ -1,0 +1,31 @@
+<h2 class="flash"><%= notice %></h2>
+<% @page_title = 'ユーザー詳細'%>
+
+<div class="content">
+  <h2><%= @page_title %></h2>
+
+  <table>
+    <tr>
+      <th>名前</th>
+      <td><%= @user.last_name + ' ' + @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>誕生日</th>
+      <td><%= @user.birthday %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @user.sex == 1 ? '女' : '男' %></td>
+    </tr>
+  </table>
+  <ul>
+    <li><%= link_to '編集', edit_user_path(@user) %></li>
+    <li><%= link_to '削除', user_path(@user), method: :delete,
+              data: { confirm: '削除していいですか？' } %></li>
+    <li><%= link_to '一覧へ戻る', users_path %></li>
+  </ul>
+</div><!-- /.content -->
