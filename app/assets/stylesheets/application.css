@@ -27,6 +27,7 @@ body {
   min-width: 980px;
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
 }
 h1, h2, h3, p {
   margin: 0;

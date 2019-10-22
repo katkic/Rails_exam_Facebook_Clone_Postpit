@@ -7,40 +7,12 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://kit.fontawesome.com/d8549526ba.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="wrapper">
-    <header clearfix>
-      <div class="header-container">
-        <h1>fakebook</h1>
-
-        <div class="login-form">
-          <form action="">
-            <table>
-              <thead>
-                <tr>
-                  <th><label for="email">メールアドレス</label></th>
-                  <th><label for="password" class="pass">パスワード</label></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td><input type="text" id="email"></td>
-                  <td><input type="password" id="password"></td>
-                  <td><button type="submit">ログイン</button></td>
-                </tr>
-              </tbody>
-            </table>
-          </form>
-        </div><!-- /.login-form -->
-      </div><!-- /.header-container -->
-    </header>
-
-    <main>
-      <%= yield %>
-    </main>
-  </div><!-- /.wrapper -->
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>
