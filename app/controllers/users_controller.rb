@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    set_user
   end
 
   def create
@@ -26,9 +27,19 @@ class UsersController < ApplicationController
   end
 
   def update
+    set_user
+
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: 'ユーザー情報を更新しました'
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    set_user
+    @user.destroy
+    redirect_to users_path, notice: 'ユーザーを削除しました'
   end
 
   private
