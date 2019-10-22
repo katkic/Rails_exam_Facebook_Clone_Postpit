@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="content-body clearfix">
+    <div class="content-body-left">
+      <h2>最近の投稿</h2>
+      <p>会員登録しなくても、直近の閲覧はできます。</p>
+    </div><!-- /.content-body-left -->
+
+    <div class="content-body-right">
+      <h2>新規アカウントを作成</h2>
+      <p>簡単に登録できます。</p>
+      <%= form_with model: @user, local: true do |f| %>
+        <table>
+          <tr>
+            <td><%= f.text_field :last_name, placeholder: '姓' %></td>
+            <td><%= f.text_field :first_name, placeholder: '名' %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= f.text_field :email, placeholder: 'メールアドレス', class: 'wide' %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= f.password_field :password, placeholder: 'パスワード', class: 'wide' %></td>
+          </tr>
+          <tr>
+            <td colspan="2"><%= f.password_field :password_confirmation, placeholder: 'パスワード確認用', class: 'wide' %></td>
+          </tr>
+          <tr class="tr-birthday">
+            <th><%= f.label :birthday, '誕生日' %></th>
+          </tr>
+          <tr>
+            <td><%= f.date_select :birthday,
+                      start_year: 1940, end_year: Time.current.year,
+                      use_month_numbers: true %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :sex, '性別' %></th>
+          </tr>
+          <tr>
+            <td>
+              <%= f.radio_button :sex, 1 %>
+              <%= f.label :sex_1, '女' %>&nbsp;&nbsp;
+              <%= f.radio_button :sex, 2 %>
+              <%= f.label :sex_2, '男' %>
+            </td>
+          </tr>
+          <tr>
+            <td><%= f.submit %></td>
+          </tr>
+        </table>
+      <% end %><!-- form_with -->
+    </div><!-- /.content-body-right -->
+  </div><!-- /.content-body -->
+
+  <footer>
+      <%= link_to 'DIVE INTO CODE', 'https://diveintocode.jp' %>
+    </footer>
+</div><!-- /.container -->

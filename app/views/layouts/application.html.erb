@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>FakebookAppSample</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="ja">
+<head>
+  <title><%= page_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div class="wrapper">
+    <header clearfix>
+      <div class="header-container">
+        <h1>fakebook</h1>
+
+        <div class="login-form">
+          <form action="">
+            <table>
+              <thead>
+                <tr>
+                  <th><label for="email">メールアドレス</label></th>
+                  <th><label for="password" class="pass">パスワード</label></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><input type="text" id="email"></td>
+                  <td><input type="password" id="password"></td>
+                  <td><button type="submit">ログイン</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div><!-- /.login-form -->
+      </div><!-- /.header-container -->
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+  </div><!-- /.wrapper -->
+</body>
 </html>

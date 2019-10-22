@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+@charset "UTF-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:focus {
+  outline: none;
+}
+body {
+  width: 100%;
+  min-width: 980px;
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+h1, h2, h3, p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+body {
+  color: #333;
+}
+ /* header ------------ */
+header {
+  width: 100%;
+  height: 84px;
+  background-color: #3B5998;
+  color: #fff;
+  font-size: 16px;
+}
+.header-container {
+  width: 980;
+  margin: 0 auto;
+}
+header h1 {
+  font-size: 34px;
+  float: left;
+  margin-left: 110px;
+  margin-top: 25px;
+}
+header .login-form {
+  float: right;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+header form table tr {
+  text-align: left;
+}
+header form table th {
+  font-size: 12px;
+}
+header form input {
+  border: 1px solid #333;
+}
+header form input[type="text"],
+header form input[type="password"] {
+  width: 150px;
+  height: 23px;
+}
+header form label.pass {
+  margin-left: 20px;
+}
+header form input[type="password"] {
+  margin-left: 20px;
+}
+header form button {
+  margin-left: 10px;
+  background-color: #4267B2;
+  color: #fff;
+  border: 1px solid #4c4c4c;
+  border-radius: 3px;
+}
+
+/* メインコンテンツ ------------ */
+.container {
+  background-color: #E9EBEE;
+  padding-top: 20px;
+}
+.content-body h2 {
+  font-size: 38px;
+}
+.content-body p {
+  font-size: 20px;
+}
+.content-body-right form table th {
+  text-align: left;
+  color: #90949D;
+}
+.content-body-right form {
+  margin-top: 15px;
+}
+.content-body-right table td {
+  padding: 5px 5px;
+}
+.content-body-right form input {
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+}
+.content-body-right form input[type="text"],
+.content-body-right form input[type="password"] {
+  width: 194px;
+  height: 37px;
+}
+.content-body-right form input.wide {
+  width: 100%;
+}
+.content-body-right form button {
+  width: 195px;
+  height: 38px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #639A4E;
+  border: 1px solid #4f7a3f;
+  font-size: 18px;
+  font-weight: bold;
+}
+.content-body {
+  width: 980px;
+  margin: 0 auto;
+}
+.content-body-left {
+  float: left;
+  width: 480px;
+  height: 600px;
+}
+.content-body-right {
+  float: right;
+  width: 480px;
+  height: 600px;
+  padding-left: 40px;
+}
+.content-body-right form input.wide {
+  width: 100%;
+}
+.content-body-right form input[type="submit"] {
+  width: 195px;
+  height: 38px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #639A4E;
+  border: 1px solid #4f7a3f;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.content-body {
+  width: 980px;
+  margin: 0 auto;
+}
+.content-body-left {
+  float: left;
+  width: 480px;
+  height: 600px;
+}
+.content-body-right {
+  float: right;
+  width: 480px;
+  height: 600px;
+  padding-left: 40px;
+}
+
+/* footer ------------ */
+footer {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom: 1px solid #ccc;
+}
+footer a {
+  color: #333;
+}
