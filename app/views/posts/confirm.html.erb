@@ -1,0 +1,20 @@
+<h2>以下の内容で送信しますか？</h2>
+
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
+  <div class="content-sentence">
+    <p><%= @post.content %></p>
+  </div>
+  <p class="content-image">
+    <%= image_tag @post.image.url if @post.image && @post.image.url %>
+  </p>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_cache %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= form_with model: @post, url: new_post_path, method: 'get', local: true do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_cache %>
+  <%= f.submit '戻る', name: 'back' %>
+<% end %>
