@@ -13,6 +13,7 @@
 </header>
 
 <div class="container">
+<p><%= notice %></p>
 
 <% @posts.each do |post| %>
   <div class="main-content">
@@ -23,7 +24,10 @@
           <p class="created_at"><%= post.created_at %></p>
         </div>
         <div class="ct-r">
-          <span><i class="fas fa-ellipsis-h"></i></span>
+          <%= link_to '詳細', post_path(post) %> |
+          <%= link_to '編集', edit_post_path(post) %> |
+          <%= link_to '削除', post_path(post), method: :delete,
+                  data: { confirm: '削除してもいいですか？' } %>
         </div>
       </div>
 
