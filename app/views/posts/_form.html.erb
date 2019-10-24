@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="to-index">
+    <%= link_to '一覧へ戻る', posts_path %>
+  </div><!-- /.to-index -->
+
+  <div class="post-container">
+    <h2 class="new-title"><%= @page_title %></h2>
+    <div class="post-content">
+
+      <div class="icon-area clearfix">
+        <p class="icon-left"><img src="images/dive_into_code.png" alt="山田太郎" class="user-icon cover50"></p>
+        <h3 class="icon-left">山田太郎</h3>
+      </div><!-- /.icon-area -->
+
+      <%= form_with model: @post, url: confirm_posts_path, local: true do |f| %>
+        <%= f.text_area :content, placeholder: 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
+
+        <div class="picture">
+          <p><%= image_tag @post.image.url, class: 'content-img' if @post.image && @post.image.url %></p>
+
+          <p class="photo-icon">
+            <i class="far fa-image fa-lg"></i>
+            <%= f.label :image, '写真' %>
+          </p>
+          <%= f.file_field :image, class: 'post-img-area' %>
+          <%= f.hidden_field :image_cache %>
+        </div><!-- /.picture -->
+
+        <div class="submit-btn clearfix">
+          <%= f.submit class: 'create-btn' %>
+        </div><!-- /.submit -->
+      <% end %>
+    </div><!-- /.post-content -->
+  </div><!-- /.post-container -->
+</div><!-- /.container -->

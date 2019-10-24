@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 body {
+  margin-top: 0;
   font-size: 10px;
 }
 a {
@@ -9,51 +10,60 @@ a {
 
 header {
   width: 100%;
-  height: 45px;
-  padding-top: 8px;
   background-color: #3B5998;
   color: #fff;
   font-size: 14px;
   margin: 0 auto;
-  position: fixed;
   top: 0;
   left: 0;
+  position: fixed;
 }
 
-.container {
-  width: 500px;
-  margin: 90px auto 0;
+header a.post-btn {
+  color: #fff;
+  margin-left: 50px;
+  font-size: 20px;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  display: block;
+
 }
 
 header nav {
-  width: 700px;
-  margin: 0 auto;
+  width: 850px;
+  padding-top: 20px;
+  margin:  auto;
 }
 
 header nav ul li {
   float: left;
 }
 
-header nav ul li input[type="text"] {
+.search {
   margin: 2px 5px 0 10px;
   width: 400px;
   height: 25px;
 }
 
-header nav ul li input[type="submit"] {
+.search-btn {
   margin-right: 30px;
   height: 30px;
 }
 
-header nav ul li img.user-icon {
+.user-icon {
   /* width: 30px; */
   border-radius: 50%;
 }
 
-header nav ul li.user-name {
-  font-size: 14px;
+.user-name {
+  font-size: 16px;
   margin-top: 5px;
   margin-left: 10px;
+}
+
+.container {
+  width: 500px;
+  margin: 90px auto 0;
 }
 
 .main-content {
@@ -105,17 +115,13 @@ header nav ul li.user-name {
   float: right;
 }
 
-.content-sentence {
+.content-body p.content-sentence {
+  font-size: 14px;
   padding: 0 15px 15px;
 }
 
-.content-sentence p {
-  font-size: 16px;
-}
-
-.content-photo {
-  width: 100%;
-  height: auto;
+img {
+  width: 498px;
 }
 
 .content-footer {
@@ -162,6 +168,95 @@ header nav ul li.user-name {
   background-color: #f4f4f4;
 }
 
-img {
-  width: 500px;
+
+/* new, editの設定 */
+.to-index {
+  text-align: right;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+.post-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.new-title {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #F5F6F7;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-content {
+  height: 100%;
+  background-color: #fff;
+}
+
+.icon-area {
+  width: 100%;
+  height: 50%;
+  padding: 15px;
+}
+
+.icon-left {
+  float: left;
+}
+
+h3.icon-left {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  border: none;
+  resize: none;
+}
+
+.photo-icon {
+  padding-left: 15px;
+}
+.post-img-area {
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding-top: 10px;
+
+}
+
+.create-btn {
+  width: 80px;
+  float: right;
+  background-color: #4267B2;
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.back-btn {
+  width: 80px;
+  background-color: #4267B2;
+  border-radius: 3px;
+  color: #fff;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.post-btn:hover, .create-btn:hover, .back-btn:hover {
+  opacity: 0.8;
+}
+
+.confirm-title {
+  margin-bottom: 10px;
+  font-size: 20px;
 }

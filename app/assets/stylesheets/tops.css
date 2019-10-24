@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-body {
-  color: #333;
-}
 /* header ------------ */
 header {
   width: 100%;
@@ -11,41 +8,50 @@ header {
   color: #fff;
   font-size: 16px;
 }
+
 .header-container {
-  width: 980;
+  width: 980px;
   margin: 0 auto;
 }
+
 header h1 {
   font-size: 34px;
   float: left;
-  margin-left: 110px;
   margin-top: 25px;
 }
+
 header .login-form {
   float: right;
-  margin-right: 150px;
   margin-top: 10px;
 }
+
 header form table tr {
   text-align: left;
 }
+
 header form table th {
   font-size: 12px;
 }
+
 header form input {
   border: 1px solid #333;
 }
+
 header form input[type="text"],
 header form input[type="password"] {
   width: 150px;
-  height: 23px;
+  height: 24px;
+  border-radius: 3px;
 }
+
 header form label.pass {
   margin-left: 20px;
 }
+
 header form input[type="password"] {
   margin-left: 20px;
 }
+
 header form button {
   margin-left: 10px;
   background-color: #4267B2;
@@ -55,69 +61,68 @@ header form button {
 }
 
 /* メインコンテンツ ------------ */
-.container {
+.top-container {
   background-color: #E9EBEE;
+}
+
+.top-content {
+  width: 980px;
   padding-top: 20px;
+  margin: 0 auto;
 }
-.content-body h2 {
-  font-size: 38px;
+
+.top-content h2 {
+  font-size: 36px;
 }
-.content-body p {
-  font-size: 20px;
+
+.top-content p {
+  font-size: 18px;
 }
-.content-body-right form table th {
+
+.top-content-left {
+  float: left;
+  width: 480px;
+  height: 600px;
+}
+
+.create-account {
+  float: right;
+  width: 480px;
+  height: 600px;
+  padding-left: 60px;
+}
+
+.create-account form table th {
   text-align: left;
   color: #90949D;
 }
-.content-body-right form {
+
+.create-account form {
   margin-top: 15px;
 }
-.content-body-right table td {
-  padding: 5px 5px;
+
+.create-account table td {
+  padding: 5px 5px 5px 0;
 }
-.content-body-right form input {
+
+.create-account form input {
   border-radius: 5px;
   font-size: 18px;
   padding-left: 10px;
   border: 1px solid #ccc;
 }
-.content-body-right form input[type="text"],
-.content-body-right form input[type="password"] {
+
+.create-account form input[type="text"],
+.create-account form input[type="password"] {
   width: 194px;
   height: 37px;
 }
-.content-body-right form input.wide {
+
+.create-account form input.wide {
   width: 100%;
 }
-.content-body-right form button {
-  width: 195px;
-  height: 38px;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #639A4E;
-  border: 1px solid #4f7a3f;
-  font-size: 18px;
-  font-weight: bold;
-}
-.content-body {
-  width: 980px;
-  margin: 0 auto;
-}
-.content-body-left {
-  float: left;
-  width: 480px;
-  height: 600px;
-}
-.content-body-right {
-  float: right;
-  width: 480px;
-  height: 600px;
-  padding-left: 40px;
-}
-.content-body-right form input.wide {
-  width: 100%;
-}
-.content-body-right form input[type="submit"] {
+
+.create-account form input[type="submit"] {
   width: 195px;
   height: 38px;
   border-radius: 3px;
@@ -127,21 +132,6 @@ header form button {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-}
-.content-body {
-  width: 980px;
-  margin: 0 auto;
-}
-.content-body-left {
-  float: left;
-  width: 480px;
-  height: 600px;
-}
-.content-body-right {
-  float: right;
-  width: 480px;
-  height: 600px;
-  padding-left: 40px;
 }
 
 /* footer ------------ */
@@ -153,6 +143,7 @@ footer {
   padding-top: 10px;
   border-bottom: 1px solid #ccc;
 }
+
 footer a {
   color: #333;
 }

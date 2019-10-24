@@ -1,0 +1,42 @@
+<div class="main-content">
+  <div class="content-header clearfix">
+    <p><img src="images/dive_into_code.png" alt="" class="user-icon cover50"></p>
+
+    <div class="ct-l">
+      <p>山田太郎</p>
+      <p class="created_at"><%= post.created_at %></p>
+    </div><!-- /.ct-l -->
+
+    <div class="ct-r">
+      <%= link_to '詳細', post_path(post) %> |
+      <%= link_to '編集', edit_post_path(post) %> |
+      <%= link_to '削除', post_path(post), method: :delete,
+              data: { confirm: '削除してもいいですか？' } %>
+    </div><!-- /.ct-r -->
+  </div><!-- /.content-header clearfix -->
+
+  <div class="content-body">
+    <p class="content-sentence"><%= post.content %></p>
+    <p><%= image_tag post.image.url, class: 'content-img' %></p>
+  </div><!-- /.content-body -->
+
+  <div class="content-footer">
+    <div class="content-footer-top clearfix">
+      <ul>
+        <li class="content-footer-top-l"><i class="far fa-thumbs-up fa-lg"></i>10</li>
+        <div class="li-right">
+          <li class="content-footer-top-r">コメント10件</li>
+          <li class="content-footer-top-r">シェア5件</li>
+        </div><!-- /.li-right -->
+      </ul>
+    </div><!-- /.content-footer-top clearfix -->
+
+    <div class="content-footer-bottom clear-fix">
+      <ul>
+        <li><a href=""><i class="far fa-thumbs-up fa-lg"></i>いいね！</a></li>
+        <li><a href=""><i class="far fa-comment-alt fa-lg"></i>コメント</a></li>
+        <li><a href=""><i class="far fa-share-square fa-lg"></i>シェアする</a></li>
+      </ul>
+    </div><!-- /.content-footer-bottom clear-fix -->
+  </div><!-- /.content-footer -->
+</div><!-- /.main-content -->
