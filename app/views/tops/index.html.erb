@@ -3,38 +3,39 @@
     <h1><%= page_title %></h1>
 
     <div class="login-form">
-      <form action="">
+      <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
         <table>
           <thead>
             <tr>
-              <th><label for="email">メールアドレス</label></th>
-              <th><label for="password" class="pass">パスワード</label></th>
+              <th><%= f.label :email, 'メールアドレス' %>
+              <th><%= f.label :password, 'パスワード', class: 'pass'%>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td><input type="text" id="email"></td>
-              <td><input type="password" id="password"></td>
-              <td><button type="submit">ログイン</button></td>
+              <td><%= f.text_field :email %>
+              <td><%= f.password_field :password %>
+              <td><%= f.submit 'ログイン', class: 'login-btn' %>
             </tr>
           </tbody>
         </table>
-      </form>
+      <% end %>
     </div><!-- /.login-form -->
   </div><!-- /.header-container -->
 </header>
 
-<div class="top-container">
-  <div class="top-content clearfix">
-    <div class="top-content-left">
-      <h2>最近の投稿</h2>
-      <p>会員登録しなくても、直近の閲覧はできます。</p>
-    </div><!-- /.top-content-left -->
+<div class="top-content clearfix">
+  <div class="notice">
+    <p><%= notice %></p>
+  </div><!-- /.notice -->
+  <div class="top-content-left">
+    <h2>最近の投稿</h2>
+    <p>会員登録しなくても、直近の閲覧はできます。</p>
+  </div><!-- /.top-content-left -->
 
-    <%= render '/users/form' %>
-  </div><!-- /.top-content -->
-</div><!-- /.top-container -->
+  <%= render '/users/form' %>
+</div><!-- /.top-content -->
 
 <footer>
   <%= link_to 'DIVE INTO CODE', 'https://diveintocode.jp' %>

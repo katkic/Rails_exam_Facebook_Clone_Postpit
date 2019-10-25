@@ -7,6 +7,8 @@
       <li><img src="/dive_into_code.png" alt="山田太郎" class="user-icon cover30"></li>
       <li class="user-name">山田太郎</li>
       <li><%= link_to '新規投稿', new_post_path, class: 'post-btn' %></li>
+      <li><%= link_to 'ログアウト', session_path(current_user.id),
+                method: :delete %></li>
     </ul>
   </nav>
 </header>

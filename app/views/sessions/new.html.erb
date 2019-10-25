@@ -1,0 +1,27 @@
+<header>
+  <div class="header-container clearfix">
+    <h1><%= page_title %></h1>
+  </div><!-- /.header-container -->
+</header>
+
+<div class="container">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+
+  <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+    <table>
+      <tr>
+        <th><%= f.label :email, 'メールアドレス' %></th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :password, 'パスワード' %></th>
+        <td><%= f.password_field :password %></td>
+      </tr>
+      <tr>
+        <td><%= f.submit 'ログイン' %></td>
+      </tr>
+    </table>
+  <% end %>
+</div><!-- /.container -->
