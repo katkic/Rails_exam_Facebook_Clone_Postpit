@@ -23,52 +23,56 @@ header h1 {
 header .login-form {
   float: right;
   margin-top: 10px;
+  margin-right: 20px;
 }
 
-header form table tr {
+form table tr {
   text-align: left;
 }
 
-header form table th {
+form table th {
   font-size: 12px;
 }
 
-header form input {
+form label.pass {
+  margin-left: 20px;
+}
+
+form input {
   border: 1px solid #333;
 }
 
-header form input[type="text"],
-header form input[type="password"] {
+form input[type="text"],
+form input[type="password"] {
+  font-size: 12px;
   width: 150px;
   height: 24px;
   border-radius: 3px;
 }
 
-header form label.pass {
-  margin-left: 20px;
-}
-
 header form input[type="password"] {
   margin-left: 20px;
 }
 
-header form button {
+.login-btn {
+  font-size: 12px;
   margin-left: 10px;
+  padding: 5px;
   background-color: #4267B2;
   color: #fff;
   border: 1px solid #4c4c4c;
   border-radius: 3px;
 }
 
-/* メインコンテンツ ------------ */
-.top-container {
-  background-color: #E9EBEE;
+.login-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
+/* メインコンテンツ ------------ */
 .top-content {
   width: 980px;
-  padding-top: 20px;
-  margin: 0 auto;
+  margin: 95px auto 0;
 }
 
 .top-content h2 {
@@ -146,4 +150,9 @@ footer {
 
 footer a {
   color: #333;
+}
+
+.notice {
+  text-align: center;
+  background-color: orange;
 }
