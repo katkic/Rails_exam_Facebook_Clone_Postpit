@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
 
     if @post.save
       redirect_to posts_path, notice: '投稿しました'
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   def update
     set_post
+
     if @post.save
       @post.update(post_params)
       redirect_to post_path(@post), notice: '更新しました'
@@ -57,6 +58,6 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 end
