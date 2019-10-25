@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
+body {
+  background-color: #E9EBEE;
+}
 table tr td a {
   color: #333;
   text-decoration: underline;
 }
-body {
-  background-color: #E9EBEE;
-}
+
 /* メインコンテンツ ------------ */
 #error_explanation {
   margin-top: 20px;
@@ -21,31 +22,50 @@ h2 {
 p {
   font-size: 20px;
 }
-.content {
+
+.new-container {
   padding-top: 20px;
   width: 500px;
   margin: 0 auto;
 }
-.content form table th.th-left {
+
+.create-account {
+  width: 480px;
+  height: 600px;
+
+}
+
+.create-account form table th {
   text-align: left;
   color: #90949D;
 }
-.content form input {
+
+.create-account form {
+  margin-top: 15px;
+}
+
+.create-account table td {
+  padding: 5px 5px 5px 0;
+}
+
+.create-account form input {
   border-radius: 5px;
   font-size: 18px;
-  padding: 5px;
   padding-left: 10px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
 }
-.content form input[type="text"] {
+
+.create-account form input[type="text"],
+.create-account form input[type="password"] {
   width: 194px;
   height: 37px;
 }
-.content form input.wide {
+
+.create-account form input.wide {
   width: 100%;
 }
-.content form input[type="submit"] {
+
+.create-account form input[type="submit"] {
   width: 195px;
   height: 38px;
   border-radius: 3px;
@@ -55,8 +75,4 @@ p {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.user-index td {
-  width: 100px;
 }
