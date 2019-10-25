@@ -12,7 +12,7 @@
         <h3 class="icon-left">山田太郎</h3>
       </div><!-- /.icon-area -->
 
-      <%= form_with model: @post, url: confirm_posts_path, local: true do |f| %>
+      <%= form_with model: @post, url: choose_new_or_edit, local: true do |f| %>
         <%= f.text_area :content, placeholder: 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
 
         <div class="picture">
