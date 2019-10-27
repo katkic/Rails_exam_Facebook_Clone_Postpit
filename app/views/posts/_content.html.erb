@@ -3,16 +3,18 @@
     <p><img src="/dive_into_code.png" alt="山田太郎" class="user-icon cover50"></p>
 
     <div class="ct-l">
-      <h3>山田太郎</h3>
+      <h3><%= post.user.last_name + ' ' + post.user.first_name %></h3>
       <p class="created_at"><%= post.created_at %></p>
     </div><!-- /.ct-l -->
 
-    <div class="ct-r">
-      <%= link_to '詳細', post_path(post) %> |
-      <%= link_to '編集', edit_post_path(post) %> |
-      <%= link_to '削除', post_path(post), method: :delete,
-              data: { confirm: '削除してもいいですか？' } %>
-    </div><!-- /.ct-r -->
+    <% if current_user == post.user %>
+      <div class="ct-r">
+        <%= link_to '詳細', post_path(post) %> |
+        <%= link_to '編集', edit_post_path(post) %> |
+        <%= link_to '削除', post_path(post), method: :delete,
+                data: { confirm: '削除してもいいですか？' } %>
+      </div><!-- /.ct-r -->
+    <% end %>
   </div><!-- /.content-header clearfix -->
 
   <div class="content-body">
