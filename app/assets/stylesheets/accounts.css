@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+h3.user-name {
+  font-size: 20px;
+}
+
+.outer-table {
+  padding: 30px 30px 40px;
+}
+.user-info {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-info tr {
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.user-info th, td {
+  padding: 20px;
+}

@@ -5,12 +5,12 @@
 
   <div class="post-container">
     <h2 class="new-title"><%= @page_title %></h2>
-    <div class="post-content">
 
-      <div class="icon-area clearfix">
+    <div class="post-content">
+      <div class="content-header clearfix">
         <p class="icon-left"><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
         <h3 class="icon-left"><%= user_name %></h3>
-      </div><!-- /.icon-area -->
+      </div><!-- /.content-header -->
 
       <%= form_with model: @post, url: choose_new_or_edit, local: true do |f| %>
         <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>

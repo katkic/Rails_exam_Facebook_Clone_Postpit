@@ -1,2 +1,47 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<% @page_title = 'マイアカウント'%>
+<%= render 'shared/header' %>
+
+<div class="container">
+  <p><%= notice %></p>
+
+  <div class="content">
+    <h2><%= @page_title %></h2>
+
+    <div class="to-index">
+      <%= link_to '一覧へ戻る', posts_path %>
+    </div><!-- /.to-index -->
+
+    <div class="post-content">
+      <div class="content-header clearfix">
+        <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+
+        <div class="ct-l">
+          <h3 class="user-name"><%= user_name %></h3>
+        </div><!-- /.ct-l -->
+
+        <div class="ct-r">
+          <%= link_to '編集', edit_accounts_path(current_user) %> |
+          <%= link_to '削除', accounts_path(current_user), method: :delete,
+                  data: { confirm: '削除してもいいですか？' } %>
+        </div><!-- /.ct-r -->
+      </div><!-- /.content-header clearfix -->
+
+      <div class="outer-table">
+        <table class="user-info">
+          <tr>
+            <th>メールアドレス</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>誕生日</th>
+            <td><%= @user.birthday %></td>
+          </tr>
+          <tr>
+            <th>性別</th>
+            <td><%= @user.sex == 1 ? '女性' : '男性' %></td>
+          </tr>
+        </ble>
+      </div><!-- /.outer-table -->
+    </div><!-- /.post-content -->
+  </div><!-- /.content -->
+</div><!-- /.container -->
