@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'accounts/show'
+  get 'accounts/edit'
   root 'tops#index'
   resources :users
 
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
+  resource  :accounts, only: [:show, :edit, :update]
 end
