@@ -6,4 +6,8 @@ module PostsHelper
       post_path
     end
   end
+
+  def add_account_link
+    '<%= author_name %>'
+  end
 end
