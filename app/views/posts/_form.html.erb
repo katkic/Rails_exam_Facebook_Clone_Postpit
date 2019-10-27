@@ -8,12 +8,12 @@
     <div class="post-content">
 
       <div class="icon-area clearfix">
-        <p class="icon-left"><img src="/dive_into_code.png" alt="山田太郎" class="user-icon cover50"></p>
-        <h3 class="icon-left">山田太郎</h3>
+        <p class="icon-left"><img src="/dive_into_code.png" alt="ユーザーアイコン" class="user-icon cover50"></p>
+        <h3 class="icon-left"><%= user_name %></h3>
       </div><!-- /.icon-area -->
 
       <%= form_with model: @post, url: choose_new_or_edit, local: true do |f| %>
-        <%= f.text_area :content, placeholder: 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
+        <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
 
         <div class="picture">
           <p><%= image_tag @post.image.url, class: 'content-img' if @post.image && @post.image.url %></p>
