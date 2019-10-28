@@ -16,8 +16,7 @@
       <%= form_with model: @post, url: posts_path, local: true do |f| %>
         <p class="content-sentence"><%= @post.content %></p>
         <p class="picture">
-          <%= image_tag @post.image.url class: 'content-img'
-                if @post.image && @post.image.url %>
+          <%= image_tag @post.image.url, class: 'content-img' if @post.image && @post.image.url %>
         </p>
         <%= f.hidden_field :content %>
         <%= f.hidden_field :image_cache %>

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    set_post
+    @post
   end
 
   def new
@@ -18,11 +18,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    set_post
+    @post
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to posts_path, notice: '投稿しました'
@@ -32,10 +32,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    set_post
-
-    if @post.save
-      @post.update(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post), notice: '更新しました'
     else
       render 'edit'
@@ -43,12 +40,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    set_post.destroy
+    @post.destroy
     redirect_to posts_path, notice: '投稿を削除しました'
   end
 
   def confirm
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+    render 'new' if @post.invalid?
   end
 
   private
