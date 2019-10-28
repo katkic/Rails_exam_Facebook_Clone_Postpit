@@ -5,12 +5,12 @@
       <li><input type="text" placeholder="検索" class="search"></li>
       <li><input type="submit" value="検索" class="search-btn"></li>
       <li>
-        <%= link_to accounts_path(current_user) do %>
+        <%= link_to account_path(current_user) do %>
           <%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
         <% end %>
       </li>
       <li class="user-name">
-        <%= link_to accounts_path(current_user) do %>
+        <%= link_to account_path(current_user) do %>
           <%= user_name %>
         <% end %>
       </li>

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  resource  :accounts, only: [:show, :edit, :update]
+  resource  :account, only: [:show, :edit, :update]
 end

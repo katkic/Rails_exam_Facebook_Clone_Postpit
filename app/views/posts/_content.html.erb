@@ -4,7 +4,7 @@
 <div class="main-content">
   <div class="content-header clearfix">
     <% if author %>
-      <%= link_to accounts_path(current_user) do %>
+      <%= link_to account_path(current_user) do %>
         <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
       <% end %>
     <% else %>
@@ -13,7 +13,7 @@
 
     <div class="ct-l">
       <% if author %>
-        <h3><%= link_to author_name, accounts_path(current_user) %></h3>
+        <h3><%= link_to author_name, account_path(current_user) %></h3>
       <% else %>
         <h3><%= author_name%></h3>
       <% end %>
