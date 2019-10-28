@@ -12,11 +12,11 @@ h3.user-name {
   border-collapse: collapse;
 }
 
-.user-info tr {
+.user-info .account-show {
   border-bottom: 1px solid #ccc;
   text-align: left;
 }
 
-.user-info th, td {
+.user-info .a-s-box {
   padding: 20px;
 }

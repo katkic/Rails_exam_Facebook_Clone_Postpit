@@ -1,32 +1,74 @@
-<% @page_title = 'ユーザー詳細'%>
+<header>
+  <div class="header-container clearfix">
+    <h1><%= page_title %></h1>
 
-<p><%= notice %></p>
+    <div class="login-form">
+      <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+        <table>
+          <thead>
+            <tr>
+              <th><%= f.label :email, 'メールアドレス' %>
+              <th><%= f.label :password, 'パスワード', class: 'pass'%>
+            </tr>
+          </thead>
 
-<div class="content">
-  <h2><%= @page_title %></h2>
+          <tbody>
+            <tr>
+              <td><%= f.text_field :email %>
+              <td><%= f.password_field :password %>
+              <td><%= f.submit 'ログイン', class: 'login-btn' %>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div><!-- /.login-form -->
+  </div><!-- /.header-container -->
+</header>
 
-  <table>
-    <tr>
-      <th>名前</th>
-      <td><%= @user.last_name + ' ' + @user.first_name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td><%= @user.email %></td>
-    </tr>
-    <tr>
-      <th>誕生日</th>
-      <td><%= @user.birthday %></td>
-    </tr>
-    <tr>
-      <th>性別</th>
-      <td><%= @user.sex == 1 ? '女性' : '男性' %></td>
-    </tr>
-  </table>
-  <ul>
-    <li><%= link_to '編集', edit_user_path(@user) %></li>
-    <li><%= link_to '削除', user_path(@user), method: :delete,
-              data: { confirm: '削除していいですか？' } %></li>
-    <li><%= link_to '一覧へ戻る', users_path %></li>
-  </ul>
-</div><!-- /.content -->
+<div class="container">
+
+  <p><%= notice %></p>
+
+  <div class="content">
+    <h2><%= @page_title %></h2>
+
+    <div class="to-index">
+      <%= link_to 'ログインする', new_session_path %>
+    </div><!-- /.to-index -->
+
+    <div class="post-content">
+      <div class="content-header clearfix">
+        <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+
+        <div class="ct-l">
+          <h3 class=""><%= @user.last_name + ' ' + @user.first_name %></h3>
+        </div><!-- /.ct-l -->
+
+        <% if current_user %>
+          <div class="ct-r">
+            <%= link_to '編集', edit_account_path(current_user) %> |
+            <%= link_to '削除', account_path(current_user), method: :delete,
+                    data: { confirm: '削除してもいいですか？' } %>
+          </div><!-- /.ct-r -->
+        <% end %>
+      </div><!-- /.content-header clearfix -->
+
+      <div class="outer-table">
+        <table class="user-info">
+          <tr class="account-show">
+            <th class="a-s-box">メールアドレス</th>
+            <td class="a-s-box"><%= @user.email %></td>
+          </tr>
+          <tr class="account-show">
+            <th class="a-s-box">誕生日</th>
+            <td class="a-s-box"><%= @user.birthday %></td>
+          </tr>
+          <tr class="account-show">
+            <th class="a-s-box">性別</th>
+            <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
+          </tr>
+        </table>
+      </div><!-- /.outer-table -->
+    </div><!-- /.post-content -->
+  </div><!-- /.content -->
+</div><!-- /.container -->

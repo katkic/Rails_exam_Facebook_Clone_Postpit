@@ -70,9 +70,13 @@ header form input[type="password"] {
 }
 
 /* メインコンテンツ ------------ */
+.outer_container {
+  margin-top: 84px;
+}
 .top-content {
   width: 980px;
-  margin: 95px auto 0;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
 .top-content h2 {
@@ -89,53 +93,11 @@ header form input[type="password"] {
   height: 600px;
 }
 
-.create-account {
+.top-content-right {
   float: right;
   width: 480px;
   height: 600px;
   padding-left: 60px;
-}
-
-.create-account form table th {
-  text-align: left;
-  color: #90949D;
-}
-
-.create-account form {
-  margin-top: 15px;
-}
-
-.create-account table td {
-  padding: 5px 5px 5px 0;
-}
-
-.create-account form input {
-  border-radius: 5px;
-  font-size: 18px;
-  padding-left: 10px;
-  border: 1px solid #ccc;
-}
-
-.create-account form input[type="text"],
-.create-account form input[type="password"] {
-  width: 194px;
-  height: 37px;
-}
-
-.create-account form input.wide {
-  width: 100%;
-}
-
-.create-account form input[type="submit"] {
-  width: 195px;
-  height: 38px;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #639A4E;
-  border: 1px solid #4f7a3f;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 /* footer ------------ */
@@ -148,8 +110,12 @@ footer {
   border-bottom: 1px solid #ccc;
 }
 
-footer a {
+.top-footer {
   color: #333;
+}
+
+.top-footer:hover {
+  text-decoration: underline;
 }
 
 .notice {

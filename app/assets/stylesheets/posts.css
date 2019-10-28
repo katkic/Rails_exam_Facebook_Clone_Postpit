@@ -63,7 +63,8 @@ header nav ul li {
 
 .container {
   width: 500px;
-  margin: 90px auto 0;
+  margin: 84px auto 0;
+  padding-top: 20px;
 }
 
 .main-content {

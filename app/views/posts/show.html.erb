@@ -1,6 +1,6 @@
 <% @page_title = '投稿詳細' %>
 
-<%= render 'header' %>
+<%= render 'shared/header' %>
 
 <div class="container">
   <p><%= notice %></p>
@@ -9,5 +9,6 @@
   <div class="to-index">
     <%= link_to '一覧へ戻る', posts_path %>
   </div><!-- /.to-index -->
+
   <%= render 'content', post: @post %>
 </div><!-- /.container -->

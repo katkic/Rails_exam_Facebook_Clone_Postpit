@@ -20,27 +20,27 @@
         </div><!-- /.ct-l -->
 
         <div class="ct-r">
-          <%= link_to '編集', edit_accounts_path(current_user) %> |
-          <%= link_to '削除', accounts_path(current_user), method: :delete,
+          <%= link_to '編集', edit_account_path(current_user) %> |
+          <%= link_to '削除', account_path(current_user), method: :delete,
                   data: { confirm: '削除してもいいですか？' } %>
         </div><!-- /.ct-r -->
       </div><!-- /.content-header clearfix -->
 
       <div class="outer-table">
         <table class="user-info">
-          <tr>
-            <th>メールアドレス</th>
-            <td><%= @user.email %></td>
+          <tr class="account-show">
+            <th class="a-s-box">メールアドレス</th>
+            <td class="a-s-box"><%= @user.email %></td>
           </tr>
-          <tr>
-            <th>誕生日</th>
-            <td><%= @user.birthday %></td>
+          <tr class="account-show">
+            <th class="a-s-box">誕生日</th>
+            <td class="a-s-box"><%= @user.birthday %></td>
           </tr>
-          <tr>
-            <th>性別</th>
-            <td><%= @user.sex == 1 ? '女性' : '男性' %></td>
+          <tr class="account-show">
+            <th class="a-s-box">性別</th>
+            <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
           </tr>
-        </ble>
+        </table>
       </div><!-- /.outer-table -->
     </div><!-- /.post-content -->
   </div><!-- /.content -->

@@ -25,18 +25,30 @@
   </div><!-- /.header-container -->
 </header>
 
-<div class="top-content clearfix">
+<div class="outer_container">
   <div class="notice">
     <p><%= notice %></p>
   </div><!-- /.notice -->
-  <div class="top-content-left">
-    <h2>最近の投稿</h2>
-    <p>会員登録しなくても、直近の閲覧はできます。</p>
-  </div><!-- /.top-content-left -->
 
-  <%= render '/users/form' %>
-</div><!-- /.top-content -->
+  <div class="top-content clearfix">
+    <div class="top-content-left">
+      <h2>最近の投稿</h2>
+      <p>会員登録しなくても、直近の閲覧はできます。</p>
+    </div><!-- /.top-content-left -->
+
+    <div class="top-content-right">
+      <h2>新規アカウントを作成</h2>
+      <p>簡単に登録できます。</p>
+
+      <div class="create-account">
+        <%= form_with model: @user, local: true do |f| %>
+          <%= render '/shared/user_form' %>
+        <% end %>
+      </div><!-- /.create-account -->
+    </div><!-- /.top-content-right -->
+  </div><!-- /.top-content -->
+</div><!-- /.outer_container -->
 
 <footer>
-  <%= link_to 'DIVE INTO CODE', 'https://diveintocode.jp' %>
+  <%= link_to 'DIVE INTO CODE', 'https://diveintocode.jp', class: 'top-footer' %>
 </footer>
