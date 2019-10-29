@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :login_required
+  skip_before_action :login_required, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,14 +7,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    set_user
+    @user
   end
 
   def new
   end
 
   def edit
-    set_user
+    @user
   end
 
   def create
@@ -28,8 +28,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    set_user
-
     if @user.update(user_params)
       redirect_to user_path(@user), notice: 'ユーザー情報を更新しました'
     else
@@ -38,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    set_user
     @user.destroy
     redirect_to users_path, notice: 'ユーザーを削除しました'
   end
