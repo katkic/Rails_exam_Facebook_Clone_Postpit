@@ -1,7 +1,11 @@
-<header>
+<header class="post-user-header">
   <nav>
     <ul class="clearfix">
-      <li><i class="fab fa-facebook-square fa-2x"></i></li>
+      <li>
+        <%= link_to posts_path, class: 'to-index' do %>
+          <i class="fab fa-facebook-square fa-2x"></i>
+        <% end %>
+      </li>
       <li><input type="text" placeholder="検索" class="search"></li>
       <li><input type="submit" value="検索" class="search-btn"></li>
       <li>
@@ -9,14 +13,14 @@
           <%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
         <% end %>
       </li>
-      <li class="user-name">
-        <%= link_to account_path(current_user) do %>
+      <li>
+        <%= link_to account_path(current_user), class: 'user-name' do %>
           <%= user_name %>
         <% end %>
       </li>
-      <li><%= link_to '新規投稿', new_post_path, class: 'post-btn' %></li>
+      <li><%= link_to '新規投稿', new_post_path, class: 'post-btn login-font' %></li>
       <li><%= link_to 'ログアウト', session_path(current_user.id),
-                method: :delete %></li>
+                method: :delete, class: 'logout-btn' %></li>
     </ul>
   </nav>
 </header>

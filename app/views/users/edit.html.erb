@@ -1,3 +1,14 @@
-<div class="container">
-  <%= render 'shared/user_form' %>
-</div><!-- /.container -->
+<% @page_title = 'アカウント情報の編集' %>
+<%= render 'shared/user_header' %>
+
+<div class="outer_container">
+  <div class="new-container">
+    <h2><%= @page_title %></h2>
+
+    <div class="create-account">
+      <%= form_with model: @user, local: true do |f| %>
+        <%= render 'shared/user_form', f: f %>
+      <% end %>
+    </div><!-- /.create-account -->
+  </div><!-- /.new-container -->
+</div><!-- /.outer_container -->

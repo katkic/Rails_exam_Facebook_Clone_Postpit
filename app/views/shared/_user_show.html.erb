@@ -1,0 +1,32 @@
+<div class="post-content content-boader">
+  <div class="content-header clearfix">
+    <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+
+    <div class="ct-l">
+      <h3 class="show-username"><%= user_name %></h3>
+    </div><!-- /.ct-l -->
+
+    <div class="ct-r">
+      <%= link_to '編集', edit_account_path(current_user) %> |
+      <%= link_to '削除', account_path(current_user), method: :delete,
+              data: { confirm: '削除してもいいですか？' } %>
+    </div><!-- /.ct-r -->
+  </div><!-- /.content-header clearfix -->
+
+  <div class="outer-table">
+    <table class="user-info">
+      <tr class="account-show">
+        <th class="a-s-box">メールアドレス</th>
+        <td class="a-s-box"><%= @user.email %></td>
+      </tr>
+      <tr class="account-show">
+        <th class="a-s-box">誕生日</th>
+        <td class="a-s-box"><%= @user.birthday %></td>
+      </tr>
+      <tr class="account-show">
+        <th class="a-s-box">性別</th>
+        <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
+      </tr>
+    </table>
+  </div><!-- /.outer-table -->
+</div><!-- /.post-content -->

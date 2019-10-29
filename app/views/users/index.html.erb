@@ -1,29 +1,28 @@
 <% @page_title = 'ユーザー管理' %>
+<%= render 'shared/header' %>
 
-<header>
-  <nav>
-    <ul class="clearfix">
-      <li><i class="fab fa-facebook-square fa-2x"></i></li>
-      <li><input type="text" placeholder="検索"></li>
-      <li><input type="submit" value="検索"></li>
-      <li><img src="/dive_into_code.png" alt="山田太郎" class="user-icon cover30"></li>
-      <li class="user-name">山田太郎</li>
-    </ul>
-  </nav>
-</header>
+<div class="outer-wrapper">
+  <div class="notice">
+    <p><%= notice %></p>
+  </div><!-- /.notice -->
 
-<p><%= notice %></p>
-
-<h2><%= @page_title %></h2>
-
-<table border="1" class="user-index">
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.id %></td>
-      <td><%= link_to user.last_name + ' ' + user.first_name, user_path(user) %></td>
-      <td><%= link_to '編集', edit_user_path(user.id) %> | </td>
-      <td><%= link_to '削除', user_path(user.id), method: :delete,
-                  data: { confirm: '削除してもいいですか？'} %></td>
-    </tr>
-  <% end %>
-</table>
+  <div class="container">
+    <h2><%= @page_title %></h2>
+    <table class="user-index">
+      <% @users.each do |user| %>
+        <tr>
+          <td class="u-index-td right"><%= user.id %></td>
+          <td class="u-index-td">
+            <%= link_to user.last_name + ' ' + user.first_name,
+                    user_path(user.id) %>
+          </td>
+          <td class="u-index-td center">
+            <%= link_to '編集', edit_user_path(user.id) %> |
+                    <%= link_to '削除', user_path(user.id), method: :delete,
+                    data: { confirm: '削除してもいいですか？'} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div><!-- /.container -->
+</div><!-- /.outer-wrapper -->

@@ -1,47 +1,20 @@
-<% @page_title = 'マイアカウント'%>
+<% @page_title = 'アカウント情報'%>
 <%= render 'shared/header' %>
 
-<div class="container">
-  <p><%= notice %></p>
+<div class="outer-wrapper">
+  <div class="notice">
+    <p><%= notice %></p>
+  </div><!-- /.notice -->
 
-  <div class="content">
-    <h2><%= @page_title %></h2>
+  <div class="container">
+    <div class="content">
+      <h2><%= @page_title %></h2>
 
-    <div class="to-index">
-      <%= link_to '一覧へ戻る', posts_path %>
-    </div><!-- /.to-index -->
+      <div class="to-index">
+        <%= link_to '投稿一覧へ戻る', posts_path %>
+      </div><!-- /.to-index -->
 
-    <div class="post-content">
-      <div class="content-header clearfix">
-        <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
-
-        <div class="ct-l">
-          <h3 class="user-name"><%= user_name %></h3>
-        </div><!-- /.ct-l -->
-
-        <div class="ct-r">
-          <%= link_to '編集', edit_account_path(current_user) %> |
-          <%= link_to '削除', account_path(current_user), method: :delete,
-                  data: { confirm: '削除してもいいですか？' } %>
-        </div><!-- /.ct-r -->
-      </div><!-- /.content-header clearfix -->
-
-      <div class="outer-table">
-        <table class="user-info">
-          <tr class="account-show">
-            <th class="a-s-box">メールアドレス</th>
-            <td class="a-s-box"><%= @user.email %></td>
-          </tr>
-          <tr class="account-show">
-            <th class="a-s-box">誕生日</th>
-            <td class="a-s-box"><%= @user.birthday %></td>
-          </tr>
-          <tr class="account-show">
-            <th class="a-s-box">性別</th>
-            <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
-          </tr>
-        </table>
-      </div><!-- /.outer-table -->
-    </div><!-- /.post-content -->
-  </div><!-- /.content -->
-</div><!-- /.container -->
+      <%= render 'shared/user_show' %>
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+</div><!-- /.outer-wrapperd -->

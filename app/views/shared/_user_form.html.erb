@@ -1,67 +1,71 @@
-<% if action_name == 'edit' %>
-  <h3 class="page-title"><%= @page_title = 'アカウント情報を編集' %></h3>
-<% elsif action_name == 'new' %>
-  <h3 class="page-title"><%= @page_title = 'アカウントを作成' %></h3>
-<% end %>
-
 <div class="create-account">
-  <%= form_with model: @user, local: true do |f| %>
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= @user.errors.count %>件のエラーがあります。</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div><!-- /.error_explanation -->
-    <% end %>
+  <%#= form_with model: @user, local: true do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.error_explanation -->
+  <% end %>
 
-    <table>
-      <tr>
-        <td><%= f.text_field :last_name, placeholder: '姓' %></td>
-        <td><%= f.text_field :first_name, placeholder: '名' %></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.text_field :email, placeholder: 'メールアドレス',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.password_field :password, placeholder: 'パスワード',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.password_field :password_confirmation,　placeholder: 'パスワード確認用',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr class="tr-birthday">
-        <th><%= f.label :birthday, '誕生日' %></th>
-      </tr>
-      <tr>
-        <td><%= f.date_select :birthday,
-                  start_year: 1940, end_year: Time.current.year,
-                  use_month_numbers: true %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :sex, '性別' %></th>
-      </tr>
-      <tr>
-        <td>
-          <%= f.radio_button :sex, 1 %>
-          <%= f.label :sex_1, '女性' %>&nbsp;&nbsp;
-          <%= f.radio_button :sex, 2 %>
-          <%= f.label :sex_2, '男性' %>
-        </td>
-      </tr>
-      <tr>
-        <td><%= f.submit %></td>
-      </tr>
-    </table>
-  <% end %><!-- form_with -->
+  <table>
+    <tr>
+      <th class="user-form-th"><%= f.label :last_name, class: 'f-label' %></th>
+      <th class="user-form-th"><%= f.label :first_name, class: 'f-label' %></th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :last_name %></td>
+      <td><%= f.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <th class="user-form-th"><%= f.label :email, class: 'f-label' %></th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.text_field :email, class: 'wide' %>
+      </td>
+    </tr>
+    <tr>
+      <th class="user-form-th"><%= f.label :password, class: 'f-label' %></th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.password_field :password, class: 'wide' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="user-form-th"><%= f.label :password_confirmation, class: 'f-label' %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.password_field :password_confirmation, class: 'wide' %>
+      </td>
+    </tr>
+    <tr class="tr-birthday">
+      <th class="user-form-th"><%= f.label :birthday, class: 'f-label', value: '誕生日' %></th>
+    </tr>
+    <tr>
+      <td><%= f.date_select :birthday,
+                start_year: 1940, end_year: Time.current.year,
+                use_month_numbers: true %></td>
+    </tr>
+    <tr>
+      <th class="user-form-th"><%= f.label :sex, class: 'f-label', value: '性別' %></th>
+    </tr>
+    <tr>
+      <td>
+        <%= f.radio_button :sex, 1 %>
+        <%= f.label :sex_1, '女性' %>&nbsp;&nbsp;
+        <%= f.radio_button :sex, 2 %>
+        <%= f.label :sex_2, '男性' %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= f.submit class: 'account-btn' %></td>
+    </tr>
+  </table>
+  <%# end %><!-- form_with -->
 </div><!-- /.create-account -->

@@ -1,0 +1,26 @@
+<header class="top-header">
+  <div class="header-container clearfix">
+    <h1><%= link_to 'Fakebook', root_path, class: 'header-title' %></h1>
+
+    <div class="login-form">
+      <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+        <table>
+          <thead>
+            <tr>
+              <th><%= f.label :email, class: 'login-label' %>
+              <th><%= f.label :password, class: 'login-label pass' %>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><%= f.text_field :email, class: 'top-in-field' %>
+              <td><%= f.password_field :password, class: 'top-in-field' %>
+              <td><%= f.submit 'ログイン', class: 'login-btn' %>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div><!-- /.login-form -->
+  </div><!-- /.header-container -->
+</header>

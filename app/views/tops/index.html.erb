@@ -1,29 +1,4 @@
-<header>
-  <div class="header-container clearfix">
-    <h1><%= page_title %></h1>
-
-    <div class="login-form">
-      <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
-        <table>
-          <thead>
-            <tr>
-              <th><%= f.label :email, 'メールアドレス' %>
-              <th><%= f.label :password, 'パスワード', class: 'pass'%>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td><%= f.text_field :email %>
-              <td><%= f.password_field :password %>
-              <td><%= f.submit 'ログイン', class: 'login-btn' %>
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
-    </div><!-- /.login-form -->
-  </div><!-- /.header-container -->
-</header>
+<%= render '/shared/user_header' %>
 
 <div class="outer_container">
   <div class="notice">
@@ -42,9 +17,10 @@
 
       <div class="create-account">
         <%= form_with model: @user, local: true do |f| %>
-          <%= render '/shared/user_form' %>
+          <%= render '/shared/user_form', f: f %>
         <% end %>
       </div><!-- /.create-account -->
+
     </div><!-- /.top-content-right -->
   </div><!-- /.top-content -->
 </div><!-- /.outer_container -->

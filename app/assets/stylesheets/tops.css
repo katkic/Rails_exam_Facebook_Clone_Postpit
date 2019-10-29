@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 /* header ------------ */
-header {
+.top-header {
   width: 100%;
   height: 84px;
-  background-color: #3B5998;
+  background-color: #233961;
   color: #fff;
   font-size: 16px;
 }
@@ -14,32 +14,33 @@ header {
   margin: 0 auto;
 }
 
-header h1 {
+.header-title {
   font-size: 34px;
   float: left;
   margin-top: 25px;
+  color: #fff;
 }
 
-header .login-form {
+.login-form {
   float: right;
   margin-top: 10px;
   margin-right: 20px;
+}
+
+.login-label {
+  font-size: 12px;
+}
+
+.top-in-field {
+  border: 1px solid #333;
 }
 
 form table tr {
   text-align: left;
 }
 
-form table th {
-  font-size: 12px;
-}
-
 form label.pass {
   margin-left: 20px;
-}
-
-form input {
-  border: 1px solid #333;
 }
 
 form input[type="text"],
@@ -58,21 +59,22 @@ header form input[type="password"] {
   font-size: 12px;
   margin-left: 10px;
   padding: 5px;
-  background-color: #4267B2;
+  background-color: #233961;
   color: #fff;
   border: 1px solid #4c4c4c;
   border-radius: 3px;
 }
 
 .login-btn:hover {
-  opacity: 0.8;
+  background-color: #4267B2;
   cursor: pointer;
 }
 
 /* メインコンテンツ ------------ */
 .outer_container {
-  margin-top: 84px;
+  height: 730px;
 }
+
 .top-content {
   width: 980px;
   margin: 0 auto;

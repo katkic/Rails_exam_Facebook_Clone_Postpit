@@ -1,35 +1,37 @@
-<div class="container">
-  <div class="to-index">
-    <%= link_to '一覧へ戻る', posts_path %>
-  </div><!-- /.to-index -->
+<div class="outer-wrapper">
+  <div class="container">
+    <div class="to-index">
+      <%= link_to '戻る', posts_path %>
+    </div><!-- /.to-index -->
 
-  <div class="post-container">
-    <h2 class="new-title"><%= @page_title %></h2>
+    <div class="post-container">
+      <h2 class="new-title"><%= @page_title %></h2>
 
-    <div class="post-content">
-      <div class="content-header clearfix">
-        <p class="icon-left"><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
-        <h3 class="icon-left"><%= user_name %></h3>
-      </div><!-- /.content-header -->
+      <div class="post-content">
+        <div class="content-header clearfix">
+          <p class="icon-left"><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+          <h3 class="icon-left"><%= user_name %></h3>
+        </div><!-- /.content-header -->
 
-      <%= form_with model: @post, url: choose_new_or_edit, local: true do |f| %>
-        <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
+        <%= form_with model: @post, url: choose_new_or_edit, local: true do |f| %>
+          <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
 
-        <div class="picture">
-          <p><%= image_tag @post.image.url, class: 'content-img' if @post.image && @post.image.url %></p>
+          <div class="picture">
+            <p><%= image_tag @post.image.url, class: 'content-img' if @post.image && @post.image.url %></p>
 
-          <p class="photo-icon">
-            <i class="far fa-image fa-lg"></i>
-            <%= f.label :image, '写真' %>
-          </p>
-          <%= f.file_field :image, class: 'post-img-area' %>
-          <%= f.hidden_field :image_cache %>
-        </div><!-- /.picture -->
+            <p class="photo-icon">
+              <i class="far fa-image fa-lg"></i>
+              <%= f.label :image, '写真' %>
+            </p>
+            <%= f.file_field :image, class: 'post-img-area' %>
+            <%= f.hidden_field :image_cache %>
+          </div><!-- /.picture -->
 
-        <div class="submit-btn clearfix">
-          <%= f.submit class: 'create-btn' %>
-        </div><!-- /.submit -->
-      <% end %>
-    </div><!-- /.post-content -->
-  </div><!-- /.post-container -->
-</div><!-- /.container -->
+          <div class="submit-btn clearfix">
+            <%= f.submit class: 'create-btn' %>
+          </div><!-- /.submit -->
+        <% end %>
+      </div><!-- /.post-content -->
+    </div><!-- /.post-container -->
+  </div><!-- /.container -->
+</div><!-- /.outer-wrapper -->

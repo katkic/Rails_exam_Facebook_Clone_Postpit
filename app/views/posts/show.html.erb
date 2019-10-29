@@ -1,14 +1,19 @@
 <% @page_title = '投稿詳細' %>
-
 <%= render 'shared/header' %>
 
-<div class="container">
-  <p><%= notice %></p>
-  <h2><%= @page_title %></h2>
+<div class="outer-wrapper">
+  <div class="notice">
+    <p><%= notice %></p>
+  </div><!-- /.notice -->
 
-  <div class="to-index">
-    <%= link_to '一覧へ戻る', posts_path %>
-  </div><!-- /.to-index -->
+  <div class="container">
+    <p><%= notice %></p>
+    <h2><%= @page_title %></h2>
 
-  <%= render 'content', post: @post %>
-</div><!-- /.container -->
+    <div class="to-index">
+      <%= link_to '戻る', posts_path %>
+    </div><!-- /.to-index -->
+
+    <%= render 'content', post: @post %>
+  </div><!-- /.container -->
+</div><!-- /.outer-wrapper -->

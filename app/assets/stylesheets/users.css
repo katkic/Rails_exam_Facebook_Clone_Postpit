@@ -27,54 +27,34 @@ p {
 
 .new-container {
   padding-top: 20px;
-  width: 500px;
+  width: 400px;
   margin: 0 auto;
 }
 
 .create-account {
-  width: 480px;
+  width: 400px;
   height: 600px;
-
 }
 
-.create-account form table th {
-  text-align: left;
-  color: #90949D;
-}
-
-.create-account form {
-  margin-top: 15px;
-}
-
-.create-account table td {
-  padding: 5px 5px 5px 0;
-}
-
-.create-account form input {
-  border-radius: 5px;
-  font-size: 18px;
-  padding-left: 10px;
-  border: 1px solid #ccc;
-}
-
-.create-account form input[type="text"],
-.create-account form input[type="password"] {
-  width: 194px;
-  height: 37px;
-}
-
-.create-account form input.wide {
+/* ユーザー管理画面 */
+.user-index {
+  border-collapse: collapse;
   width: 100%;
 }
 
-.create-account form input[type="submit"] {
-  width: 195px;
-  height: 38px;
-  border-radius: 3px;
-  color: #fff;
-  background-color: #639A4E;
-  border: 1px solid #4f7a3f;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+.user-index, .u-index-td {
+  border: 1px solid #ccc;
+}
+
+.u-index-td {
+  /* width: 120px; */
+  padding: 5px 10px;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }

@@ -1,66 +1,18 @@
+<%= @page_title = 'アカウント情報の編集' %>
 <%= render 'shared/header' %>
-<div class="container">
 
-  <div class="create-account">
-    <%= form_with model: @user, url: account_path, local: true do |f| %>
-      <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= @user.errors.count %>件のエラーがあります。</h2>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div><!-- /.error_explanation -->
-    <% end %>
+<div class="outer-wrapper">
+  <div class="new-container">
+    <div class="create-account">
+      <h2><%= @page_title %></h2>
 
-    <table>
-      <tr>
-        <td><%= f.text_field :last_name, placeholder: '姓' %></td>
-        <td><%= f.text_field :first_name, placeholder: '名' %></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.text_field :email, placeholder: 'メールアドレス',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.password_field :password, placeholder: 'パスワード',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <%= f.password_field :password_confirmation,　placeholder: 'パスワード確認用',
-                class: 'wide' %>
-        </td>
-      </tr>
-      <tr class="tr-birthday">
-        <th><%= f.label :birthday, '誕生日' %></th>
-      </tr>
-      <tr>
-        <td><%= f.date_select :birthday,
-                  start_year: 1940, end_year: Time.current.year,
-                  use_month_numbers: true %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :sex, '性別' %></th>
-      </tr>
-      <tr>
-        <td>
-          <%= f.radio_button :sex, 1 %>
-          <%= f.label :sex_1, '女性' %>&nbsp;&nbsp;
-          <%= f.radio_button :sex, 2 %>
-          <%= f.label :sex_2, '男性' %>
-        </td>
-      </tr>
-      <tr>
-        <td><%= f.submit %></td>
-      </tr>
-    </table>
-  <% end %>
+      <div class="to-index">
+        <%= link_to '戻る', :back %>
+      </div><!-- /.to-index -->
 
-  </div><!-- /.create-account -->
-</div><!-- /.content -->
+      <%= form_with model: @user, url: account_path, local: true do |f| %>
+        <%= render 'shared/user_form', f: f %>
+      <% end %><!-- form_with -->
+    </div><!-- /.create-account -->
+  </div><!-- /.content -->
+</div><!-- /.outer-wrapper -->

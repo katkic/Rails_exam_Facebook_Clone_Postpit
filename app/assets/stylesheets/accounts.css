@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
-h3.user-name {
+.show-username {
   font-size: 20px;
+  padding-top: 10px;
 }
 
 .outer-table {
   padding: 30px 30px 40px;
 }
+
 .user-info {
   width: 100%;
   border-collapse: collapse;
