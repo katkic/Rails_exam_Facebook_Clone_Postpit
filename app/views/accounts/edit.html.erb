@@ -11,6 +11,11 @@
       </div><!-- /.to-index -->
 
       <%= form_with model: @user, url: account_path, local: true do |f| %>
+        <p class="photo-icon">
+          <p class="icon-left"><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+          <%= f.label :image, 'ユーザーアイコン', class: 'user-icon-label' %>
+        </p>
+        <%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png', class: 'user-img-area' %>
         <%= render 'shared/user_form', f: f %>
       <% end %><!-- form_with -->
     </div><!-- /.create-account -->

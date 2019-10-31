@@ -5,10 +5,10 @@
   <div class="content-header clearfix">
     <% if author %>
       <%= link_to account_path(current_user) do %>
-        <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+        <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
       <% end %>
     <% else %>
-      <p><%= image_tag 'dive_into_code.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+      <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
     <% end %>
 
     <div class="ct-l">

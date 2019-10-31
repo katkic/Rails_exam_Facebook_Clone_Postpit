@@ -1,0 +1,5 @@
+<% if current_user.image? %>
+  <%= image_tag user.image.url, alt="ユーザーアイコン", class: 'user-icon cover30' %>
+<% else %>
+  <%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
+<% end %>
