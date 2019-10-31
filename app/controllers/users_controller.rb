@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :login_required, only: [:new, :create]
+  skip_before_action :login_required, only: [:new, :create, :show]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -50,7 +50,9 @@ class UsersController < ApplicationController
       :birthday,
       :sex,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :image,
+      :image_cache
     )
   end
 
