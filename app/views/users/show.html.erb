@@ -1,5 +1,9 @@
 <% @page_title = 'ユーザー情報詳細'%>
-<%= render 'shared/header' %>
+<% if current_user %>
+  <%= render 'shared/header' %>
+<% else %>
+  <%= render 'shared/user_header' %>
+<% end %>
 
 <div class="outer-wrapper">
   <div class="container">
