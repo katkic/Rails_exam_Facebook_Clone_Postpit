@@ -22,3 +22,12 @@
 .user-info .a-s-box {
   padding: 20px;
 }
+
+.user-icon-label {
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+#user_image {
+  font-size: 12px;
+}

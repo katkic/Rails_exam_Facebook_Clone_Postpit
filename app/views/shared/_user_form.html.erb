@@ -17,15 +17,15 @@
       <th class="user-form-th"><%= f.label :first_name, class: 'f-label' %></th>
     </tr>
     <tr>
-      <td><%= f.text_field :last_name %></td>
-      <td><%= f.text_field :first_name %></td>
+      <td><%= f.text_field :last_name, class: 'add-border' %></td>
+      <td><%= f.text_field :first_name, class: 'add-border' %></td>
     </tr>
     <tr>
       <th class="user-form-th"><%= f.label :email, class: 'f-label' %></th>
     </tr>
     <tr>
       <td colspan="2">
-        <%= f.text_field :email, class: 'wide' %>
+        <%= f.text_field :email, class: 'add-border wide' %>
       </td>
     </tr>
     <tr>
@@ -33,7 +33,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= f.password_field :password, class: 'wide' %>
+        <%= f.password_field :password, class: 'add-border wide' %>
       </td>
     </tr>
     <tr>
@@ -41,7 +41,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= f.password_field :password_confirmation, class: 'wide' %>
+        <%= f.password_field :password_confirmation, class: 'add-border wide' %>
       </td>
     </tr>
     <tr class="tr-birthday">
