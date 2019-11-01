@@ -1,6 +1,21 @@
 ---
 ja:
   activerecord:
+    models:
+      user: ユーザー情報
+      post: 投稿
+    attributes:
+      user:
+        last_name: 姓
+        first_name: 名
+        email: メールアドレス
+        birthday: 誕生日
+        sex: 性別
+        password: パスワード
+        password_confirmation: パスワード確認用
+      post:
+        content: 本文
+        image: 写真
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -207,3 +222,8 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  form:
+    Last_name: 姓
+    First_name: 名
+    Email: メールアドレス
+    Password: パスワード
