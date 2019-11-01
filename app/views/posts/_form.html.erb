@@ -1,3 +1,5 @@
+<% icon_size = 50 %>
+
 <div class="outer-wrapper">
   <div class="container">
     <div class="to-index">
@@ -9,7 +11,7 @@
 
       <div class="post-content">
         <div class="content-header clearfix">
-          <p class="icon-left"><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+          <p class="icon-left"><%= choose_user_icon(current_user, icon_size) %></p>
           <h3 class="icon-left"><%= user_name %></h3>
         </div><!-- /.content-header -->
 

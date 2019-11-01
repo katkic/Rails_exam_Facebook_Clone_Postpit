@@ -1,14 +1,16 @@
 <% author = current_user == post.user %>
 <% author_name = post.user.last_name + ' ' + post.user.first_name %>
+<% icon_size = 50 %>
 
 <div class="main-content">
   <div class="content-header clearfix">
+
     <% if author %>
       <%= link_to account_path(current_user) do %>
-        <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+        <%= choose_user_icon(post.user, icon_size) %>
       <% end %>
     <% else %>
-      <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+      <%= choose_user_icon(post.user, icon_size) %>
     <% end %>
 
     <div class="ct-l">

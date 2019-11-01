@@ -1,3 +1,5 @@
+<% icon_size = 50 %>
+
 <%= render 'shared/header' %>
 <div class="outer-wrapper">
 <div class="container">
@@ -5,7 +7,7 @@
 
   <div class="main-content">
     <div class="content-header clearfix">
-      <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+      <p><%= choose_user_icon(current_user, icon_size) %></p>
 
       <div class="ct-l">
         <h3><%= user_name %></h3>

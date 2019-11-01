@@ -1,6 +1,12 @@
+<% icon_size = 50 %>
+
 <div class="post-content content-boader">
   <div class="content-header clearfix">
-    <p><%= image_tag '/assets/default.png', alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+    <% if current_user %>
+      <%= choose_user_icon(current_user, icon_size) %>
+    <% else %>
+      <%= choose_user_icon(@user, icon_size) %>
+    <% end %>
 
     <div class="ct-l">
       <h3 class="show-username">
