@@ -9,5 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true,
                     length: { maximum: 255 },
-                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+                    format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
+                              allow_blank: true }
+  validates :password, presence: true, length: { minimum: 8, allow_blank: true }
 end
