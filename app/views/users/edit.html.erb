@@ -7,6 +7,7 @@
 
     <div class="create-account">
       <%= form_with model: @user, local: true do |f| %>
+        <%= render 'shared/user_icon_area', f: f %>
         <%= render 'shared/user_form', f: f %>
       <% end %>
     </div><!-- /.create-account -->

@@ -1,0 +1,6 @@
+<% icon_size = 50 %>
+
+<p class="icon-left"><%= choose_user_icon(current_user, icon_size) %></p>
+<%= f.label :image, 'ユーザーアイコン', class: 'user-icon-label' %>
+<%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png',
+      class: 'user-img-area' %>
