@@ -2,7 +2,7 @@
 
 <div class="post-content content-boader">
   <div class="content-header clearfix">
-    <% if current_user %>
+    <% if current_user.id == @user.id %>
       <%= choose_user_icon(current_user, icon_size) %>
     <% else %>
       <%= choose_user_icon(@user, icon_size) %>
