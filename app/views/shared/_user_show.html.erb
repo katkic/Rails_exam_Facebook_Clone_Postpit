@@ -10,7 +10,7 @@
 
     <div class="ct-l">
       <h3 class="show-username">
-        <% if current_user %>
+        <% if controller_name == 'accounts' %>
           <%= user_name %>
         <% else %>
           <%= @user.last_name + ' ' + @user.first_name %>
@@ -18,11 +18,13 @@
       </h3>
     </div><!-- /.ct-l -->
 
-    <div class="ct-r">
-      <%= link_to '編集', edit_account_path(current_user) %> |
-      <%= link_to '削除', account_path(current_user), method: :delete,
-              data: { confirm: '削除してもいいですか？' } %>
-    </div><!-- /.ct-r -->
+    <% if current_user.id == @user.id%>
+      <div class="ct-r">
+        <%= link_to '編集', edit_account_path(current_user) %> |
+        <%= link_to '削除', account_path(current_user), method: :delete,
+                data: { confirm: '削除してもいいですか？' } %>
+      </div><!-- /.ct-r -->
+    <% end %>
   </div><!-- /.content-header clearfix -->
 
   <div class="outer-table">

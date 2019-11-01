@@ -4,21 +4,12 @@
 
 <div class="main-content">
   <div class="content-header clearfix">
-
-    <% if author %>
-      <%= link_to account_path(current_user) do %>
-        <%= choose_user_icon(post.user, icon_size) %>
-      <% end %>
-    <% else %>
+    <%= link_to user_path(post.user.id) do %>
       <%= choose_user_icon(post.user, icon_size) %>
     <% end %>
 
     <div class="ct-l">
-      <% if author %>
-        <h3><%= link_to author_name, account_path(current_user) %></h3>
-      <% else %>
-        <h3><%= author_name%></h3>
-      <% end %>
+      <h3><%= link_to author_name, user_path(post.user.id) %></h3>
       <p class="created_at"><%= post.created_at.strftime('%m月%d日 %H:%M') %></p>
     </div><!-- /.ct-l -->
 
