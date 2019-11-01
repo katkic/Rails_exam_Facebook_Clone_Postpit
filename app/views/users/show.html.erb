@@ -2,12 +2,16 @@
 <%= render 'shared/header' %>
 
 <div class="outer-wrapper">
-  <div class="container">
+  <div class="notice">
     <p><%= notice %></p>
-
+  </div><!-- /.notice -->
+  <div class="container">
     <div class="content">
-      <h2><%= @page_title %></h2>
+      <h2 class="page-title"><%= @page_title %></h2>
 
+      <div class="to-index">
+        <%= link_to 'ユーザー管理へ戻る', users_path %>
+      </div><!-- /.to-index -->
       <% unless current_user %>
         <div class="to-index">
           <%= link_to 'ログインする', new_session_path %>

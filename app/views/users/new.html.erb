@@ -1,11 +1,17 @@
-<%= render 'shared/user_header' %>
+<% @page_title = '新規ユーザー作成' %>
+<% if current_user %>
+  <%= render 'shared/header' %>
+<% else %>
+  <%= render 'shared/user_header' %>
+<% end %>
 
-<div class="outer_container">
+<div class="outer-wrapper">
   <div class="new-container">
+    <h2 class="page-title"><%= @page_title %></h2>
     <div class="create-account">
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/user_form', f: f %>
       <% end %>
     </div><!-- /.create-account -->
   </div><!-- /.new-container -->
-</div><!-- /.outer_container -->
+</div><!-- /.outer-wrapper -->

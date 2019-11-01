@@ -1,10 +1,12 @@
 <% @page_title = 'アカウント情報の編集' %>
 <%= render 'shared/header' %>
 
-<div class="outer_container">
+<div class="outer-wrapper">
   <div class="new-container">
-    <h2><%= @page_title %></h2>
-
+    <h2 class="page-title"><%= @page_title %></h2>
+    <div class="to-index">
+      <%= link_to 'ユーザー管理へ戻る', users_path %>
+    </div><!-- /.to-index -->
     <div class="create-account">
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/user_icon_area', f: f %>
@@ -12,4 +14,4 @@
       <% end %>
     </div><!-- /.create-account -->
   </div><!-- /.new-container -->
-</div><!-- /.outer_container -->
+</div><!-- /.outer-wrapper -->

@@ -17,10 +17,6 @@ table tr td a {
   padding-top: 10px;
 }
 
-h2 {
-  font-size: 28px;
-}
-
 p {
   font-size: 20px;
 }
@@ -48,7 +44,11 @@ p {
 
 .u-index-td {
   /* width: 120px; */
-  padding: 5px 10px;
+  padding: 10px;
+}
+
+.padding-l {
+  padding-left: 20px;
 }
 
 .right {
@@ -57,4 +57,10 @@ p {
 
 .center {
   text-align: center;
+}
+
+.user-container {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
 }

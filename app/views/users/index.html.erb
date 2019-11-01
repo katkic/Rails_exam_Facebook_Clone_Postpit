@@ -6,16 +6,26 @@
     <p><%= notice %></p>
   </div><!-- /.notice -->
 
-  <div class="container">
-    <h2><%= @page_title %></h2>
+  <div class="user-container">
+    <h2 class="page-title"><%= @page_title %></h2>
+    <div class="to-index">
+        <%= link_to '新規ユーザー作成', new_user_path %>
+      </div><!-- /.to-index -->
     <table class="user-index">
+      <tr>
+        <td class="u-index-td center">ID</td>
+        <td class="u-index-td center">氏名</td>
+        <td class="u-index-td center">メールアドレス</td>
+        <td class="u-index-td center">操作</td>
+      </tr>
       <% @users.each do |user| %>
         <tr>
-          <td class="u-index-td right"><%= user.id %></td>
-          <td class="u-index-td">
+          <td class="u-index-td padding-l right"><%= user.id %></td>
+          <td class="u-index-td padding-l">
             <%= link_to user.last_name + ' ' + user.first_name,
                     user_path(user.id) %>
           </td>
+          <td class="u-index-td padding-l"><%= user.email %></td>
           <td class="u-index-td center">
             <%= link_to '編集', edit_user_path(user.id) %> |
                     <%= link_to '削除', user_path(user.id), method: :delete,
@@ -24,5 +34,5 @@
         </tr>
       <% end %>
     </table>
-  </div><!-- /.container -->
+  </div><!-- /.user-container -->
 </div><!-- /.outer-wrapper -->
