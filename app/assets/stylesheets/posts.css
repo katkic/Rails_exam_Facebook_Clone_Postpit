@@ -277,3 +277,7 @@ textarea {
   margin-bottom: 10px;
   font-size: 20px;
 }
+
+.error-messages {
+  padding-left: 40px;
+}
