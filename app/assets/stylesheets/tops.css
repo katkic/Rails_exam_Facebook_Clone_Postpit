@@ -43,15 +43,15 @@ form label.pass {
   margin-left: 20px;
 }
 
-form input[type="text"],
-form input[type="password"] {
+.login-form input.h-email,
+.login-form input[type="password"] {
   font-size: 12px;
   width: 150px;
   height: 24px;
   border-radius: 3px;
 }
 
-header form input[type="password"] {
+.h-password {
   margin-left: 20px;
 }
 

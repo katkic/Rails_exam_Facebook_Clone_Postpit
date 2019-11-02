@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_path, notice: 'ログインしました'
     else
-      redirect_to root_path, notice: 'ログインに失敗しました'
+      redirect_to new_session_path, notice: 'ログインに失敗しました'
     end
   end
 
