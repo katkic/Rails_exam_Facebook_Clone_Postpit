@@ -1,8 +1,11 @@
 class Admin::UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
   def show
+    @user
   end
 
   def new

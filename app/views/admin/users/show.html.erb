@@ -1,2 +1,20 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<% @page_title = 'ユーザー情報詳細'%>
+<%= render 'shared/header' %>
+
+<div class="outer-wrapper">
+  <div class="notice">
+    <p><%= notice %></p>
+  </div><!-- /.notice -->
+
+  <div class="container">
+    <div class="content">
+      <h2 class="page-title"><%= @page_title %></h2>
+
+      <div class="to-index">
+        <%= link_to 'ユーザー管理へ戻る', users_path %>
+      </div><!-- /.to-index -->
+
+      <%= render 'shared/user_show' %>
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+</div><!-- /.outer-wrapper -->

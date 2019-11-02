@@ -62,7 +62,7 @@
         <%= f.label :sex_2, '男性' %>
       </td>
     </tr>
-    <% if current_user.admin? %>
+    <% if current_user&.admin? %>
       <tr>
         <td class="admin-check"><%= f.check_box :admin %><%= f.label :admin, class: 'f-label' %></td>
       </tr>

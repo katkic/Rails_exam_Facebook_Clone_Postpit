@@ -47,6 +47,12 @@
         <th class="a-s-box">性別</th>
         <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
       </tr>
+      <% if current_user.admin? %>
+        <tr class="account-show">
+          <th class="a-s-box">管理者権限</th>
+          <td class="a-s-box"><%= @user.admin == true ? 'あり' : 'なし' %></td>
+        </tr>
+      <% end %>
     </table>
   </div><!-- /.outer-table -->
 </div><!-- /.post-content -->
