@@ -2,10 +2,12 @@
 
 <div class="post-content content-boader">
   <div class="content-header clearfix">
-    <% if current_user.id == @user.id %>
-      <%= choose_user_icon(current_user, icon_size) %>
+    <% if current_user %>
+      <% if current_user.id == @user.id %>
+        <%= choose_user_icon(current_user, icon_size) %>
+      <% end %>
     <% else %>
-      <%= choose_user_icon(@user, icon_size) %>
+        <%= choose_user_icon(@user, icon_size) %>
     <% end %>
 
     <div class="ct-l">
@@ -18,12 +20,14 @@
       </h3>
     </div><!-- /.ct-l -->
 
-    <% if current_user.id == @user.id%>
-      <div class="ct-r">
-        <%= link_to '編集', edit_account_path(current_user) %> |
-        <%= link_to '削除', account_path(current_user), method: :delete,
-                data: { confirm: '削除してもいいですか？' } %>
-      </div><!-- /.ct-r -->
+    <% if current_user %>
+      <% if current_user.id == @user.id%>
+        <div class="ct-r">
+          <%= link_to '編集', edit_account_path(current_user) %> |
+          <%= link_to '削除', account_path(current_user), method: :delete,
+                  data: { confirm: '削除してもいいですか？' } %>
+        </div><!-- /.ct-r -->
+      <% end %>
     <% end %>
   </div><!-- /.content-header clearfix -->
 
