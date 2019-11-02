@@ -5,6 +5,8 @@
     <% if current_user %>
       <% if current_user.id == @user.id %>
         <%= choose_user_icon(current_user, icon_size) %>
+      <% else %>
+        <%= choose_user_icon(@user, icon_size) %>
       <% end %>
     <% else %>
         <%= choose_user_icon(@user, icon_size) %>

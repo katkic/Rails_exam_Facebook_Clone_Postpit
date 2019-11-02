@@ -13,9 +13,12 @@
     <div class="content">
       <h2 class="page-title"><%= @page_title %></h2>
 
-      <div class="to-index">
-        <%= link_to 'ユーザー管理へ戻る', users_path %>
-      </div><!-- /.to-index -->
+      <% if current_user %>
+        <div class="to-index">
+          <%= link_to 'ユーザー管理へ戻る', users_path %>
+        </div><!-- /.to-index -->
+      <% end %>
+
       <% unless current_user %>
         <div class="to-index">
           <%= link_to 'ログインする', new_session_path %>
