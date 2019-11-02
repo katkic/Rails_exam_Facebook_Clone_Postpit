@@ -16,13 +16,16 @@
         <% end %>
       </li>
       <li>
-        <%= link_to account_path(current_user), class: 'user-name' do %>
+        <%= link_to account_path(current_user), class: 'header-nav' do %>
           <%= user_name %>
         <% end %>
       </li>
-      <li><%= link_to '新規投稿', new_post_path, class: 'post-btn login-font' %></li>
+      <li><%= link_to '新規投稿', new_post_path, class: 'header-nav login-font' %></li>
       <li><%= link_to 'ログアウト', session_path(current_user.id),
-                method: :delete, class: 'logout-btn' %></li>
+                method: :delete, class: 'header-nav' %></li>
+      <% if current_user.admin? %>
+        <li><%= link_to 'ユーザー管理', new_admin_user_path, class: 'header-nav' %></li>
+      <% end %>
     </ul>
   </nav>
 </header>

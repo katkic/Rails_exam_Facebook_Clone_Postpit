@@ -13,6 +13,7 @@ ja:
         sex: 性別
         password: パスワード
         password_confirmation: パスワード確認用
+        admin: 管理者権限
       post:
         content: 本文
         image: 写真

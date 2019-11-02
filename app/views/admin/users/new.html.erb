@@ -1,2 +1,14 @@
-<h1>Admin::Users#new</h1>
-<p>Find me in app/views/admin/users/new.html.erb</p>
+<% @page_title = 'ユーザー登録' %>
+<%= render 'shared/header' %>
+
+<div class="outer-wrapper">
+  <div class="new-container">
+    <h2 class="page-title"><%= @page_title %></h2>
+    <div class="create-account">
+      <%= form_with model: [:admin, @user], local: true do |f| %>
+        <%= render 'shared/user_icon_area', f: f %>
+        <%= render 'shared/user_form', f: f %>
+      <% end %>
+    </div><!-- /.create-account -->
+  </div><!-- /.new-container -->
+</div><!-- /.outer-wrapper -->
