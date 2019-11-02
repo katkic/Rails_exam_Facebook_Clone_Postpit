@@ -1,5 +1,4 @@
 <div class="create-account">
-  <%#= form_with model: @user, local: true do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= @user.errors.count %>件のエラーがあります。</h2>
@@ -29,7 +28,7 @@
       </td>
     </tr>
     <tr>
-      <th class="user-form-th"><%= f.label :password, class: 'f-label' %></th>
+      <th class="user-form-th"><%= f.label :password, class: 'f-label' %></th>
     </tr>
     <tr>
       <td colspan="2">
@@ -67,5 +66,4 @@
       <td><%= f.submit class: 'account-btn' %></td>
     </tr>
   </table>
-  <%# end %><!-- form_with -->
 </div><!-- /.create-account -->
