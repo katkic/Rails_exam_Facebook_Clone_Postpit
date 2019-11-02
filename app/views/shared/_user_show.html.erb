@@ -35,7 +35,7 @@
       </tr>
       <tr class="account-show">
         <th class="a-s-box">誕生日</th>
-        <td class="a-s-box"><%= @user.birthday %></td>
+        <td class="a-s-box"><%= @user.birthday.strftime('%Y年 %m月 %d日') %></td>
       </tr>
       <tr class="account-show">
         <th class="a-s-box">性別</th>
