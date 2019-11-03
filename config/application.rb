@@ -10,7 +10,7 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 
-module FakebookAppSample
+module Postpit
   class Application < Rails::Application
     config.load_defaults 5.2
     config.time_zone = 'Asia/Tokyo'

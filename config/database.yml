@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: fakebook_app_sample_development
+  database: postpit_development
 
 test:
   <<: *default
-  database: fakebook_app_sample_test
+  database: postpit_test
 
 production:
   <<: *default
-  database: fakebook_app_sample_production
-  username: fakebook_app_sample
-  password: <%= ENV['FAKEBOOK_APP_SAMPLE_DATABASE_PASSWORD'] %>
+  database: postpit_production
+  username: postpit
+  password: <%= ENV['postpit_DATABASE_PASSWORD'] %>
