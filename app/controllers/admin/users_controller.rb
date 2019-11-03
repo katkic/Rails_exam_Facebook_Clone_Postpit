@@ -37,6 +37,12 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    redirect_to admin_users_path,
+        notice: "ユーザー「#{@user.last_name + ' ' + @user.first_name}」を削除しました"
+  end
+
 private
 
   def user_params

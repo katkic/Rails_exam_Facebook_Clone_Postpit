@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   before_validation { email.downcase! }
-  has_many :posts
+  has_many :posts, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   validates :last_name, presence: true, length: { maximum: 15 }
