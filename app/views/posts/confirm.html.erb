@@ -7,7 +7,7 @@
 
   <div class="main-content">
     <div class="content-header clearfix">
-      <p><%= choose_user_icon(current_user, icon_size) %></p>
+      <p><%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
 
       <div class="ct-l">
         <h3><%= user_name %></h3>

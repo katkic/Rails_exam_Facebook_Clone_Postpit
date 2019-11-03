@@ -9,7 +9,13 @@
 
       <div class="post-content">
         <div class="content-header clearfix">
-          <p class="icon-left"><%= image_tag image_set(@post.user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+          <p class="icon-left">
+            <% if action_name == 'new' %>
+              <%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %>
+            <% else %>
+              <%= image_tag image_set(@post.user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %>
+            <% end %>
+          </p>
           <h3 class="icon-left"><%= user_name %></h3>
         </div><!-- /.content-header -->
 
