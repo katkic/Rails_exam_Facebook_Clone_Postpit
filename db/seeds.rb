@@ -1,9 +1,9 @@
 last_name = '山田'
 first_name = '太郎'
-email = 'admin@example.com'
+email = 'yamada@example.com'
 birthday = '1981-04-15'
 sex = 2
-password = "test!hoge"
+password = "password!"
 admin = true
 
 User.create!(
