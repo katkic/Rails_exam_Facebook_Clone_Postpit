@@ -1,0 +1,5 @@
+<%# adminのユーザー一覧から呼ばれた時だけ、userを@userへ代入 %>
+<% @user = user if action_name == 'index' %>
+<%= link_to '編集', choose_edit_path %> |
+<%= link_to '削除', choose_delete_path, method: :delete,
+          data: { confirm: '削除してもいいですか？' } %>

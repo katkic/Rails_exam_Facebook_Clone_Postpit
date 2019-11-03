@@ -14,15 +14,9 @@
       </h3>
     </div><!-- /.ct-l -->
 
-    <% if current_user %>
-      <% if current_user.id == @user.id%>
-        <div class="ct-r">
-          <%= link_to '編集', edit_account_path(current_user) %> |
-          <%= link_to '削除', account_path(current_user), method: :delete,
-                  data: { confirm: '削除してもいいですか？' } %>
-        </div><!-- /.ct-r -->
-      <% end %>
-    <% end %>
+    <div class="ct-r">
+      <%= render 'shared/edit_delete_link' %>
+    </div><!-- /.ct-r -->
   </div><!-- /.content-header clearfix -->
 
   <div class="outer-table">
