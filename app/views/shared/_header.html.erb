@@ -1,29 +1,26 @@
-<header class="post-user-header">
-  <nav>
-    <ul class="clearfix">
-      <li>
-        <%= link_to posts_path, class: 'to-index' do %>
-          <i class="fab fa-facebook-square fa-2x"></i>
-        <% end %>
-      </li>
-      <li><input type="text" placeholder="検索" class="search"></li>
-      <li><input type="submit" value="検索" class="search-btn"></li>
-      <li>
-        <%= link_to account_path(current_user) do %>
-          <%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to account_path(current_user), class: 'header-nav' do %>
-          <%= user_name %>
-        <% end %>
-      </li>
-      <li><%= link_to '新規投稿', new_post_path, class: 'header-nav login-font' %></li>
-      <li><%= link_to 'ログアウト', session_path(current_user.id),
-                method: :delete, class: 'header-nav' %></li>
-      <% if current_user.admin? %>
-        <li><%= link_to 'ユーザー管理', admin_users_path, class: 'header-nav' %></li>
+<header class="top-header">
+  <div class="header-container clearfix">
+    <h1><%= link_to 'Fakebook', root_path, class: 'header-title' %></h1>
+
+    <div class="login-form">
+      <%= form_with scope: :session, url: sessions_path, local: true do |f| %>
+        <table>
+          <thead>
+            <tr>
+              <th><%= f.label :email, class: 'login-label' %>
+              <th><%= f.label :password, class: 'login-label pass' %>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><%= f.text_field :email, class: 'top-in-field h-email' %>
+              <td><%= f.password_field :password, class: 'top-in-field h-password' %>
+              <td><%= f.submit 'ログイン', class: 'login-btn' %>
+            </tr>
+          </tbody>
+        </table>
       <% end %>
-    </ul>
-  </nav>
+    </div><!-- /.login-form -->
+  </div><!-- /.header-container -->
 </header>

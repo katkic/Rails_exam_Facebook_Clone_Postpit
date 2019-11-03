@@ -1,5 +1,5 @@
 <% @page_title = 'ユーザー管理' %>
-<%= render 'shared/header' %>
+<%= render 'shared/user_header' %>
 
 <div class="outer-wrapper">
   <div class="notice">
@@ -7,7 +7,7 @@
   </div><!-- /.notice -->
 
   <div class="user-container">
-    <h2 class="page-title"><%= page_title %></h2>
+    <h2 class="page-title"><%= @page_title %></h2>
     <div class="to-index">
       <%= link_to '投稿一覧へ戻る', posts_path %>
     </div><!-- /.to-index -->
