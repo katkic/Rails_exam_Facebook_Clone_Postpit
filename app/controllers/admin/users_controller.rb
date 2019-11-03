@@ -43,7 +43,7 @@ class Admin::UsersController < ApplicationController
         notice: "ユーザー「#{@user.last_name + ' ' + @user.first_name}」を削除しました"
   end
 
-private
+  private
 
   def user_params
     params.require(:user).permit(
@@ -55,7 +55,6 @@ private
       :password,
       :password_confirmation,
       :image,
-      :image_cache,
       :admin
     )
   end
