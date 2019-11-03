@@ -14,6 +14,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
+    @user
   end
 
   def create
@@ -24,6 +25,15 @@ class Admin::UsersController < ApplicationController
           notice: "ユーザー「#{@user.last_name + ' ' + @user.first_name}」を登録しました"
     else
       render :new
+    end
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to admin_user_path(@user),
+          notice: "ユーザー「#{@user.last_name + ' ' + @user.first_name}」を更新しました"
+    else
+      render :edit
     end
   end
 
@@ -38,7 +48,9 @@ private
       :sex,
       :password,
       :password_confirmation,
-      :image
+      :image,
+      :image_cache,
+      :admin
     )
   end
 
