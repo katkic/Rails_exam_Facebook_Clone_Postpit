@@ -1,5 +1,3 @@
-<% icon_size = 30 %>
-
 <header class="post-user-header">
   <nav>
     <ul class="clearfix">
@@ -12,7 +10,7 @@
       <li><input type="submit" value="検索" class="search-btn"></li>
       <li>
         <%= link_to account_path(current_user) do %>
-          <%= choose_user_icon(current_user, icon_size) %>
+          <%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
         <% end %>
       </li>
       <li>

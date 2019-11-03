@@ -1,19 +1,11 @@
-<% icon_size = 50 %>
-
+<%# admin_usersとaccountのユーザー詳細で共有 %>
 <div class="post-content content-boader">
   <div class="content-header clearfix">
-    <% if current_user %>
-      <% if current_user.id == @user.id %>
-        <%= choose_user_icon(current_user, icon_size) %>
-      <% else %>
-        <%= choose_user_icon(@user, icon_size) %>
-      <% end %>
-    <% else %>
-        <%= choose_user_icon(@user, icon_size) %>
-    <% end %>
+    <p><%= image_tag image_set(@user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
 
     <div class="ct-l">
       <h3 class="show-username">
+      <%# ユーザー詳細の名前表示の切り替え %>
         <% if controller_name == 'accounts' %>
           <%= user_name %>
         <% else %>
@@ -47,7 +39,7 @@
         <th class="a-s-box">性別</th>
         <td class="a-s-box"><%= @user.sex == 1 ? '女性' : '男性' %></td>
       </tr>
-      <% if current_user.admin? %>
+      <% if current_user&.admin? %>
         <tr class="account-show">
           <th class="a-s-box">管理者権限</th>
           <td class="a-s-box"><%= @user.admin == true ? 'あり' : 'なし' %></td>
