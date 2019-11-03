@@ -1,6 +1,3 @@
-<% author = current_user == post.user %>
-<% author_name = post.user.last_name + ' ' + post.user.first_name %>
-
 <div class="main-content">
   <div class="content-header clearfix">
     <%= link_to user_path(post.user.id) do %>
@@ -8,11 +5,11 @@
     <% end %>
 
     <div class="ct-l">
-      <h3><%= link_to author_name, user_path(post.user.id) %></h3>
+      <h3><%= link_to author_name(post), user_path(post.user.id) %></h3>
       <p class="created_at"><%= post.created_at.strftime('%m月%d日 %H:%M') %></p>
     </div><!-- /.ct-l -->
 
-    <% if author %>
+    <% if current_user == post.user %>
       <div class="ct-r">
         <%= link_to '詳細', post_path(post) %> |
         <%= link_to '編集', edit_post_path(post) %> |
