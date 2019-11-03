@@ -1,37 +1,38 @@
 <%= render 'shared/user_header' %>
 
 <div class="outer-wrapper">
-<div class="container">
-  <h2 class="confirm-title">以下の内容で送信しますか？</h2>
+  <div class="container">
+    <h2 class="confirm-title">以下の内容で送信しますか？</h2>
 
-  <div class="main-content">
-    <div class="content-header clearfix">
-      <p><%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %></p>
+    <div class="main-content">
+      <div class="content-header clearfix">
+        <p><%= image_tag image_set(current_user), alt: 'ユーザーアイコン',
+                  class: 'user-icon cover50' %></p>
 
-      <div class="ct-l">
-        <h3><%= user_name %></h3>
-      </div><!-- /.ct-l -->
-    </div><!-- /.content-header clearfix -->
+        <div class="ct-l">
+          <h3><%= user_name %></h3>
+        </div><!-- /.ct-l -->
+      </div><!-- /.content-header clearfix -->
 
-    <div class="content-body">
-      <%= form_with model: @post, url: posts_path, local: true do |f| %>
-        <p class="content-sentence"><%= @post.content %></p>
-        <p class="picture">
-          <%= image_tag @post.image.url, class: 'content-img' if @post.image &&
-                @post.image.url %>
-        </p>
-        <%= f.hidden_field :content %>
-        <%= f.hidden_field :image_cache %>
-        <%= f.submit class: 'create-btn new-create-btn' %>
-      <% end %>
+      <div class="content-body">
+        <%= form_with model: @post, url: posts_path, local: true do |f| %>
+          <p class="content-sentence"><%= @post.content %></p>
+          <p class="picture">
+            <%= image_tag @post.image.url, class: 'content-img' if @post.image &&
+                  @post.image.url %>
+          </p>
+          <%= f.hidden_field :content %>
+          <%= f.hidden_field :image_cache %>
+          <%= f.submit class: 'create-btn new-create-btn' %>
+        <% end %>
 
-      <%= form_with model: @post, url: new_post_path, method: 'get',
-            local: true, class: 'clearfix' do |f| %>
-        <%= f.hidden_field :content %>
-        <%= f.hidden_field :image_cache %>
-        <%= f.submit '戻る', name: 'back', class: 'back-btn' %>
-      <% end %>
-    </div><!-- /.content-body -->
-  </div><!-- /.main-content -->
-</div><!-- /container -->
+        <%= form_with model: @post, url: new_post_path, method: 'get',
+              local: true, class: 'clearfix' do |f| %>
+          <%= f.hidden_field :content %>
+          <%= f.hidden_field :image_cache %>
+          <%= f.submit '戻る', name: 'back', class: 'back-btn' %>
+        <% end %>
+      </div><!-- /.content-body -->
+    </div><!-- /.main-content -->
+  </div><!-- /container -->
 </div><!-- /.outer-wrapper -->

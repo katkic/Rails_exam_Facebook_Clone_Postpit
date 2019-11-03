@@ -1,7 +1,8 @@
 <div class="main-content">
   <div class="content-header clearfix">
     <%= link_to user_path(post.user.id) do %>
-      <%= image_tag image_set(post.user), alt: 'ユーザーアイコン', class: "user-icon cover50" %>
+      <%= image_tag image_set(post.user), alt: 'ユーザーアイコン',
+            class: "user-icon cover50" %>
     <% end %>
 
     <div class="ct-l">

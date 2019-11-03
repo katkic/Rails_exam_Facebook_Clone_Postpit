@@ -10,7 +10,8 @@
       <li><input type="submit" value="検索" class="search-btn"></li>
       <li>
         <%= link_to account_path(current_user) do %>
-          <%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover30' %>
+          <%= image_tag image_set(current_user), alt: 'ユーザーアイコン',
+                class: 'user-icon cover30' %>
         <% end %>
       </li>
       <li>

@@ -11,9 +11,11 @@
         <div class="content-header clearfix">
           <p class="icon-left">
             <% if action_name == 'new' %>
-              <%= image_tag image_set(current_user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %>
+              <%= image_tag image_set(current_user), alt: 'ユーザーアイコン',
+                    class: 'user-icon cover50' %>
             <% else %>
-              <%= image_tag image_set(@post.user), alt: 'ユーザーアイコン', class: 'user-icon cover50' %>
+              <%= image_tag image_set(@post.user), alt: 'ユーザーアイコン',
+                    class: 'user-icon cover50' %>
             <% end %>
           </p>
           <h3 class="icon-left"><%= user_name %></h3>
@@ -31,7 +33,8 @@
             </div><!-- /.error_explanation -->
           <% end %>
 
-          <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？', cols: 30, rows: 6, spellcheck: false %>
+          <%= f.text_area :content, placeholder: user_name + 'さん - 今何してる？',
+                cols: 30, rows: 6, spellcheck: false %>
 
           <div class="picture">
             <p>
