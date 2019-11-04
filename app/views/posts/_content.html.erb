@@ -22,7 +22,7 @@
 
   <div class="content-body">
     <p class="content-sentence"><%= post.content %></p>
-    <p><%= image_tag post.image.url, class: 'content-img' %></p>
+    <p><%= image_tag post.image.url, class: 'content-img' if post.image && post.image.url %></p>
   </div><!-- /.content-body -->
 
   <div class="content-footer">
