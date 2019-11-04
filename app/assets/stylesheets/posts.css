@@ -78,22 +78,20 @@ header nav ul li {
   object-fit: cover;
   width: 30px;
   height: 30px;
-  /* background-color: #ccc;
-  border: 1px solid #ccc; */
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 
 .cover50 {
   object-fit: cover;
   width: 50px;
   height: 50px;
-  /* background-color: #ccc;
-  border: 1px solid #ccc; */
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 /* ------------------------- */
 
 .content-header img.user-icon {
-  /* width: 50px; */
-  border: 1px solid #ccc;
   border-radius: 50%;
   float: left;
 }
