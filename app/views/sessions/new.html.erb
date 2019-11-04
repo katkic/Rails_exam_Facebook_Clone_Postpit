@@ -1,9 +1,18 @@
+<%= render 'shared/header' %>
+
 <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
+  <%=
+      content_tag(:div, class: "#{key}") do
+        content_tag(:p, value)
+      end
+  %>
 <% end %>
 
 <div class="outer-wrapper">
-  <div class="new-container">
-    <%= render 'shared/login_form' %>
-  </div><!-- /.new-container -->
+  <div class="login-page clearfix">
+    <h2 class="page-title login-title">ログイン</h2>
+
+      <%= render 'shared/login_form' %>
+
+  </div><!-- /.login-page -->
 </div><!-- /.outer-wrapper -->

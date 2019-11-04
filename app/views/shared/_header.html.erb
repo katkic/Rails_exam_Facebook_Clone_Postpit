@@ -1,6 +1,8 @@
 <header class="top-header">
   <div class="header-container clearfix">
     <h1><%= link_to 'Postpit', root_path, class: 'header-title' %></h1>
-    <%= render 'shared/login_form' %>
+    <% unless controller_name == 'sessions' %>
+      <%= render 'shared/login_form' %>
+    <% end %>
   </div><!-- /.header-container -->
 </header>

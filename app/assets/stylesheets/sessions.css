@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.login-page {
+  width: 500px;
+  height: 250px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.login-title {
+  padding-top: 20px;
+  padding-left: 70px;
+}
