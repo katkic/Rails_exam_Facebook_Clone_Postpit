@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
 
   root 'tops#index'
-  resources :users, except: :index
+  resources :users
 
   resources :posts do
     collection do
