@@ -1,12 +1,12 @@
 <div class="main-content">
   <div class="content-header clearfix">
-    <%= link_to user_path(post.user.id) do %>
+    <%= link_to account_path(post.user.id) do %>
       <%= image_tag image_set(post.user), alt: 'ユーザーアイコン',
             class: "user-icon cover50" %>
     <% end %>
 
     <div class="ct-l">
-      <h3><%= link_to author_name(post), user_path(post.user.id) %></h3>
+      <h3><%= link_to author_name(post), account_path(post.user.id) %></h3>
       <p class="created_at"><%= post.created_at.strftime('%m月%d日 %H:%M') %></p>
     </div><!-- /.ct-l -->
 
@@ -22,7 +22,7 @@
 
   <div class="content-body">
     <p class="content-sentence"><%= post.content %></p>
-    <p><%= image_tag post.image.url, class: 'content-img' if post.image && post.image.url %></p>
+    <p><%= image_tag post.image.url, alt: '画像の説明はありません', class: 'content-img' if post.image && post.image.url %></p>
   </div><!-- /.content-body -->
 
   <div class="content-footer">
